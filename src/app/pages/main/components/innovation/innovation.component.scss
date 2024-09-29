@@ -1,0 +1,141 @@
+.wrapper {
+    width: 100%;
+    min-height: 100px;
+    padding: 0 0 0 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 50px;
+    padding: 0 22px 0 0;
+
+}
+
+.header__span {
+    color: rgba(255, 255, 255, 1);
+    font-family: Rubik;
+    font-size: 30px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+
+}
+
+.header_btn {
+    width: 210px;
+    height: 50px;
+    border-radius: 50px;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header_btn__span {
+    font-family: Rubik;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+
+
+}
+
+.catalog {
+
+    min-height: 100px;
+}
+
+.catalog-swiper {
+    min-height: 335px;
+}
+
+.swiper-slide {
+    position: relative;
+    width: 203px;
+}
+
+.img {
+    border-radius: 32px;
+    width: 100%;
+    aspect-ratio: 2 / 3;
+}
+
+.card__span {
+    font-family: Rubik;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+    color: white;
+
+}
+
+.card_rating {
+    width: 50px;
+    height: 26px;
+    border-radius: 8px;
+    background: rgba(240, 106, 48, 1);
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    display: grid;
+    place-items: center;
+}
+
+.rating__span {
+    font-family: Jost;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    letter-spacing: -0.40799999237060547px;
+    color: white;
+
+
+}
+
+@media screen and (max-width:500px) {
+    .header {
+      
+        .header__span{
+            line-height: 30px;
+        }
+        .header_btn{
+            width: 45%;
+        }
+    }
+
+}
+
+@media screen and (max-width:485px) {
+        .header_btn__span{
+            font-size: 15px;
+        }
+    
+
+}
+@media screen and (max-width:455px) {
+    .header{
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+            .header_btn{
+                align-self: self-end;
+            }
+    }
+    
+
+}
+@media screen and (max-width:425px) {
+    .header{
+        .header_btn{
+            width: 70%;
+        }
+    }
+   
+}

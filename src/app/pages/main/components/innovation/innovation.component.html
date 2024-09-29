@@ -1,0 +1,22 @@
+<div class="wrapper">
+    <div class="header">
+        <span class="header__span">Новинки 2024</span>
+        <div class="header_btn">
+            <span class="header_btn__span">Еще больше новинок</span>
+        </div>
+    </div>
+    <div class="catalog">
+        <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20">
+            <swiper-slide class="swiper-slide" *ngFor="let item of cards()" >
+                <img class="img" [src]="item.imgUrl">
+                <span class="card__span">{{item.name}}</span>
+                <div class="card_rating">
+                    <div class="rating__span">6.6</div>
+                </div>
+            </swiper-slide>
+         
+
+        </swiper-container>
+      
+    </div>
+</div>

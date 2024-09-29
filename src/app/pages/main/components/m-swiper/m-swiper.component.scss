@@ -1,0 +1,23 @@
+.container{
+    width: 100%;
+    min-height: 100px;
+    padding: 0 22px 0;
+}
+.swiper{
+    height: 290px;
+}
+.swiper-slide{
+    height: 263px;
+    background: white;
+    border-radius: 0 ;
+    background: black no-repeat top 0 left 0 /cover;
+}
+.swiper-slide:first-child{
+    border-radius: 32px 0 0 32px;
+}
+.swiper-slide:last-child{
+    border-radius: 0 32px 32px 0;
+}
+.swiper-pagination-bullet{
+    background: white;
+}

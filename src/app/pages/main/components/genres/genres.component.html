@@ -1,0 +1,16 @@
+<div class="wrapper">
+    <div class="header">
+        <a class="header__a">Жанры</a>
+        <img src="/assets/chevron-left-lg.svg" alt="img" class="header__img">
+    </div>
+    <div class="container">
+        @for (item of genres; track $index; let index = $index) {
+        @if (index < 8) { <div class="container_item">
+            <a class="container_item__a">{{item.name}}</a>
+    </div>
+    }
+    }
+
+
+</div>
+</div>

@@ -1,0 +1,13 @@
+<div class="container">
+    <swiper-container class="swiper" pagination="true" pagination-dynamic-bullets="true">
+
+        <swiper-slide class="swiper-slide" *ngFor="let item of slides()"
+            [ngStyle]="{'background': item.imgUrl.length > 0 ? 'url(' + item.imgUrl + ') no-repeat top 0 left 0 / cover' : '  black'}">
+            {{item.imgUrl.length}}
+        </swiper-slide>
+
+
+
+
+    </swiper-container>
+</div>

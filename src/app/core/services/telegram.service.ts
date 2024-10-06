@@ -8,8 +8,6 @@ import { ITgButton } from '../../data/interfaces/tg.interface';
   providedIn: 'root'
 })
 
-
-
 export class TelegramService {
   private window;
   tg;
@@ -32,5 +30,8 @@ export class TelegramService {
 
   ready() {
     this.tg.ready();
+  }
+  getUserId(){
+    return this.tg.initDataUnsafe.user.id
   }
 }

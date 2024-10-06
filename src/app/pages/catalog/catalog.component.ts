@@ -6,11 +6,12 @@ import { CatalogCardComponent } from "./components/catalog-card/catalog-card.com
 import { CatalogService } from '../../core/services/catalog.service';
 import { ISearchCard } from '../../data/interfaces/search-card.interface';
 import { ThemeService } from '../../core/services/theme.service';
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [RouterLink, CatalogCardComponent],
+  imports: [RouterLink, CatalogCardComponent, BackButtonComponent],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss'
 })

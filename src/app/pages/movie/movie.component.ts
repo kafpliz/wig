@@ -5,11 +5,12 @@ import { IMovie } from '../../data/interfaces/movie.interface';
 import { CommonModule } from '@angular/common';
 import { ratingProcent } from '../../shared/utils/utils';
 import { ThemeService } from '../../core/services/theme.service';
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, BackButtonComponent],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })

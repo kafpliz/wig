@@ -1,4 +1,5 @@
 <div class="wrapper">
+    <app-back-button />
     <div class="genres">
         @for (item of genres; track $index) {
             <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.slug}">

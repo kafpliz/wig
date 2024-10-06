@@ -9,11 +9,12 @@ import { RandomaizerComponent } from "./components/randomaizer/randomaizer.compo
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../core/services/theme.service';
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [MSwiperComponent, InnovationComponent, GenresComponent, TopMovieComponent, SearchComponent, WatchHistoryComponent, RandomaizerComponent, CommonModule, RouterLink],
+  imports: [MSwiperComponent, InnovationComponent, GenresComponent, TopMovieComponent, SearchComponent, WatchHistoryComponent, RandomaizerComponent, CommonModule, RouterLink, BackButtonComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

@@ -4,11 +4,12 @@ import { IPersonalAccount } from '../../data/interfaces/personal-accaount.interf
 import { unixToDate } from '../../shared/utils/utils';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../core/services/theme.service';
+import { BackButtonComponent } from "../back-button/back-button.component";
 
 @Component({
   selector: 'app-personal-account',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, BackButtonComponent],
   templateUrl: './personal-account.component.html',
   styleUrl: './personal-account.component.scss'
 })

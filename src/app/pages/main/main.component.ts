@@ -18,7 +18,7 @@ import { ThemeService } from '../../core/services/theme.service';
   styleUrl: './main.component.scss'
 })
 export class MainComponent {
-  isRandomaizerActive:boolean = true;
+  isRandomaizerActive:boolean = false;
   ngOnInit(){
     new ThemeService().getTheme()
   }

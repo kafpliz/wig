@@ -3,6 +3,7 @@ import { Component, inject, output } from '@angular/core';
 import { IGenre } from '../../../../data/interfaces/genre.interface';
 import { genre } from '../../../../data/data/genres.data';
 import { RandomService } from '../../../../core/services/random.service';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-randomaizer',
@@ -17,6 +18,8 @@ export class RandomaizerComponent {
   genres: IGenre[] = genre;
   genreArr: string[] = []
   #service = inject(RandomService)
+  #router = inject(Router)
+  isShow:boolean = false
   addGenre(slug: string) {
     const cad = this.genreArr.indexOf(slug)
 
@@ -42,7 +45,7 @@ export class RandomaizerComponent {
 
     setTimeout(() => {
       this.#service.getRandom(this.genreArr).subscribe(data => {
-        console.log(data);
+       this.#router.navigate(['/catalog'] )
 
       })
     }, 2000);

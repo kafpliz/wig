@@ -5,4 +5,5 @@ export interface ITopMovie{
     genre:string
     time:string
     year:number
+    rating:number
 }

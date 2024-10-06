@@ -7,6 +7,9 @@
         <swiper-container class="swiper" space-between="21" slides-per-view="auto">
             @for (item of items; track $index) {
                 <swiper-slide >
+                    <div class="rating" [ngClass]="getRatingClass(item.rating)">
+                        <span class="rating__span">{{item.rating}}</span>
+                    </div>
                    <a href="" routerLink="movie/{{item.id}}" class="swiper-slide__a">
                     <div class="slide" style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url({{item.poster}}) no-repeat left 0 top 0 /cover ;">
                         <span class="slide_name">{{item.name}}</span>

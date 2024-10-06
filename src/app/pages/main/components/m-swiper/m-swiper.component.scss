@@ -11,6 +11,7 @@
     background: white;
     border-radius: 0 ;
     background: black no-repeat top 0 left 0 /cover;
+    overflow: hidden;
 }
 .swiper-slide:first-child{
     border-radius: 32px 0 0 32px;
@@ -20,4 +21,13 @@
 }
 .swiper-pagination-bullet{
     background: white;
+}
+.swiper-slide__a{
+    width: 100%;
+    height: 100%;
+    text-decoration: none;
+}
+.swiper-slide__img{
+    width: 100%;
+    aspect-ratio: 3 / 2;
 }

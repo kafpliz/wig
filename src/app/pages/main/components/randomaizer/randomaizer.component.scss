@@ -1,0 +1,149 @@
+:host {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    z-index: 100;
+}
+
+.wrapper {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.568);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.container_points {
+    width: 210px;
+    min-height: 100px;
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(3, 50px);
+    grid-auto-rows: 50px;
+
+    .points {
+        background: white;
+        border-radius: 50%;
+    
+    }
+
+    .points_animations {
+        animation: scale 1s cubic-bezier(0.075, 0.82, 0.165, 1) infinite;
+    }
+
+    .points:nth-child(1) {
+        animation-delay: 0s;
+    }
+
+    .points:nth-child(2) {
+        animation-delay: 0.5s;
+    }
+
+    .points:nth-child(3) {
+        animation-delay: 1s;
+    }
+
+    .points:nth-child(4) {
+        animation-delay: 1.5s;
+    }
+
+    .points:nth-child(5) {
+        animation-delay: 2s;
+    }
+
+    .points:nth-child(6) {
+        animation-delay: 2.5s;
+    }
+
+    .points:nth-child(7) {
+        animation-delay: 3s;
+    }
+
+    .points:nth-child(8) {
+        animation-delay: 3.5s;
+    }
+
+    .points:nth-child(9) {
+        animation-delay: 4s;
+    }
+
+}
+
+.container_button {
+    width: 70%;
+    min-height: 52px;
+    border-radius: 32px;
+    background: #00008b;
+    cursor: pointer;
+    display: grid;
+    place-items: center;
+
+    .container_button__span {
+        font-family: Rubik;
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 22px;
+        letter-spacing: -0.4079999924px;
+        color: white;
+    }
+}
+.genres{
+    display: flex;
+    flex-direction: column;
+    width: 240px;
+    min-height: 100px;
+    align-items: center;
+    gap: 5px;
+    .genres__span{
+        color: white;
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    ::-webkit-scrollbar{
+        width: 0;
+    }
+    .genres_container{
+        width: 100%;
+        height: 150px;
+        overflow-y: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px;
+        .genres_container__span{
+            color: white;
+            cursor: pointer;
+        }
+        .genres_container__span-active{
+            color: red;
+            font-weight: bold;
+        }
+    }
+}
+.container_arrow{
+    width: 100%;
+    min-height: 25px;
+    padding: 0 60px;
+    .container_arrow__img{
+        cursor: pointer;
+    }
+}
+@keyframes scale {
+    from {
+        transform: scale(1, 1);
+    }
+
+    to {
+        transform: scale(1.4, 1.4);
+        background: gray;
+    }
+}

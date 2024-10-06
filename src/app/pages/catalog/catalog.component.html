@@ -1,0 +1,24 @@
+<div class="wrapper">
+    <div class="genres">
+        @for (item of genres; track $index) {
+            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.slug}">
+                <span class="genres_item__span" routerLinkActive="active">{{item.name}}</span>
+            </div>
+        }
+    
+    </div>
+    <div class="cards">
+        @for (item of cards; track $index) {
+            <app-catalog-card [card]="item"/>
+        }
+       
+    </div>
+    <div class="buttons">
+        <div class="button" (click)="changePage(false)">
+            <span class="button__span">Назад</span>
+        </div>
+        <div class="button" (click)="changePage(true)">
+            <span class="button__span">Вперёд</span>
+            </div>
+    </div>
+</div>

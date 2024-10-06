@@ -7,13 +7,21 @@
     </div>
     <div class="catalog">
         <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20">
-            <swiper-slide class="swiper-slide" *ngFor="let item of cards()" >
-                <img class="img" [src]="item.imgUrl">
-                <span class="card__span">{{item.name}}</span>
-                <div class="card_rating">
-                    <div class="rating__span">6.6</div>
-                </div>
-            </swiper-slide>
+            @for (item of items; track $index) {
+                <swiper-slide class="swiper-slide" >
+                    <a href="" class="swiper-slide__a" routerLink="movie/{{item.id}}">
+                        <div class="slide">
+                            <img class="img" [src]="item.poster">
+                            <span class="card__span">{{item.name}}</span>
+                            <div class="card_rating" [ngClass]="getRatingClass(item.rating)">
+                                <div class="rating__span">{{item.rating}}</div>
+                            </div>
+                        </div>
+                    </a>
+               
+                </swiper-slide>
+            }
+  
          
 
         </swiper-container>

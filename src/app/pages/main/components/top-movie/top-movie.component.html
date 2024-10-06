@@ -5,50 +5,23 @@
     </div>
     <div class="wrapper_container">
         <swiper-container class="swiper" space-between="21" slides-per-view="auto">
-            <swiper-slide >
-                <div class="slide" style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url('https://images-s.kinorium.com/movie/poster/119492/w1500_51834992.jpg') no-repeat left 0 top 0 /cover ;">
-                    <span class="slide_name">Бойцовский клуб</span>
-                    <div class="slide_info">
-                        <span class="slide_info__span">1999</span>
-                        <span class="slide_info__span">Триллер</span>
-                        <span class="slide_info__span">1 час 54 мин</span>
+            @for (item of items; track $index) {
+                <swiper-slide >
+                   <a href="" routerLink="movie/{{item.id}}" class="swiper-slide__a">
+                    <div class="slide" style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url({{item.poster}}) no-repeat left 0 top 0 /cover ;">
+                        <span class="slide_name">{{item.name}}</span>
+                        <div class="slide_info">
+                            <span class="slide_info__span">{{item.year}}</span>
+                            <span class="slide_info__span">{{item.genre}}</span>
+                            <span class="slide_info__span">{{item.time}}</span>
+                        </div>
                     </div>
-                </div>
-
-            </swiper-slide>
-            <swiper-slide>
-                <div class="slide" style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url('https://avatars.mds.yandex.net/get-kinopoisk-image/1777765/d9fffd95-f9cf-42bc-bf81-b0c9c59ee507/180') no-repeat left 0 top 0 /cover ;">
-                    <span class="slide_name">Бойцовский клуб</span>
-                    <div class="slide_info">
-                        <span class="slide_info__span">1999</span>
-                        <span class="slide_info__span">Триллер</span>
-                        <span class="slide_info__span">1 час 54 мин</span>
-                    </div>
-                </div>
-
-            </swiper-slide>
-            <swiper-slide>
-                <div class="slide">
-                    <span class="slide_name">Бойцовский клуб</span>
-                    <div class="slide_info">
-                        <span class="slide_info__span">1999</span>
-                        <span class="slide_info__span">Триллер</span>
-                        <span class="slide_info__span">1 час 54 мин</span>
-                    </div>
-                </div>
-
-            </swiper-slide>
-            <swiper-slide>
-                <div class="slide">
-                    <span class="slide_name">Бойцовский клуб</span>
-                    <div class="slide_info">
-                        <span class="slide_info__span">1999</span>
-                        <span class="slide_info__span">Триллер</span>
-                        <span class="slide_info__span">1 час 54 мин</span>
-                    </div>
-                </div>
-
-            </swiper-slide>
+                   </a>
+    
+                </swiper-slide>
+            }
+         
+           
 
 
         </swiper-container>

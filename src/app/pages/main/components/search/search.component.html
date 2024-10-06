@@ -1,8 +1,16 @@
 <div class="wrapper">
         <div class="wrapper_header">
-            <input type="text" class="wrapper_header__inp" placeholder="Кино на веч...">
+            <input type="text" class="wrapper_header__inp" placeholder="Кино на веч..." [(ngModel)]="data" (input)="enterInput()">
         </div>
-        <div class="wrapper_catalog">
-            <app-seacrh-card />
-        </div>
+      
+            <div class="wrapper_catalog" >
+                @for (item of cards; track $index) {
+                    <a href="" class="card__a" routerLink="movie/{{item.id}}">
+                        <app-seacrh-card  [card]="item" />
+                    </a>
+                   
+                }
+            </div>
+        
+       
 </div>

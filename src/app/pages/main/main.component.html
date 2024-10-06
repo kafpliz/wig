@@ -1,8 +1,22 @@
 <div class="wrapper">
+    <div class="profile" routerLink="profile">
+        <img src="/assets/profile.svg" width="24" alt="" srcset="">
+    </div>
     <app-watch-history />
-    <app-m-swiper [slides]="[{link: '', imgUrl: 'https://www.hollywoodreporter.com/wp-content/uploads/2024/08/disney-pixar-inside-out-2-emotions-PUBLICITY-MAIN-2024.jpg?w=1296&h=730&crop=1&resize=1000%2C563'},{link: '', imgUrl: ''},{link: '', imgUrl: ''},{link: '', imgUrl: ''},{link: '', imgUrl: ''},{link: '', imgUrl: ''},]"/>
-    <app-innovation [cards]="[{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},{link: '', imgUrl: 'https://m.media-amazon.com/images/I/810zZ6ger0L.__AC_SX300_SY300_QL70_ML2_.jpg', name:'Дэдпул & Росомаха'},]"/>
+    <app-m-swiper />
+    <app-innovation />
     <app-genres />
     <app-top-movie />
     <app-search />
+    @if (isRandomaizerActive == true) {
+        <app-randomaizer (closeModal)="changeState()"/>
+    }
+    
+    <div class="wrapper_button" (click)="changeState()">
+            <div class="wrapper_button_item">
+                <span class="wrapper_button_item__span">Рандомайзер</span>
+                <span class="wrapper_button_item__span">Когда не знаете что посмотреть</span>
+            </div>
+    </div>
+
 </div>

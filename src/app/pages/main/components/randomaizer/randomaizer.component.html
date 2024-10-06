@@ -1,0 +1,26 @@
+<div class="wrapper">
+        <div class="container">
+            <div class="container_arrow">
+                <img src="/assets/arrow.svg" width="40" alt="" srcset="" class="container_arrow__img" (click)="close()">
+            </div>
+                <div class="container_points">
+                   
+                @for (item of [1,2,3,4,5,6,7,8,9]; track $index) {
+                    <div class="points" [ngClass]="{'points_animations': animationActive}"></div>
+                }
+               
+                </div>
+                <div class="container_button" (click)="startAnimation()">
+                    <span class="container_button__span">Нажать</span>
+                </div>
+                <div class="genres">
+                 <span class="genres__span">По жанрам</span>
+                 <div class="genres_container">
+                    <span class="genres_container__span" (click)="addGenre('all-genres')"  [ngClass]="{'genres_container__span-active': isActive('all-genres')}">Все жанры</span>
+                    @for (item of genres; track $index) {
+                        <span class="genres_container__span" (click)="addGenre(item.slug)"  [ngClass]="{'genres_container__span-active': isActive(item.slug)}">{{item.name}}</span>
+                    }
+                 </div>
+                </div>
+        </div>
+</div>

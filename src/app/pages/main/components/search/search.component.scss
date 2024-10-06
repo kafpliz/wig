@@ -19,7 +19,7 @@
         height: 100%;
         border-radius: 26px;
         outline: none;
-        border: none;
+        border: 1px solid var(--search-border-inp);
         padding: 0 69px;
         font-family: Rubik;
         font-size: 18px;
@@ -53,13 +53,16 @@
 
 .wrapper_catalog {
     width: 100%;
-    min-height: 300px;
+    min-height: 10px;
     display: flex;
     flex-direction: column;
-    
-
+    gap: 20px;
+    overflow: hidden;
 }
-
+.card__a{
+    text-decoration: none;
+    color: black;
+}
 @media screen and (max-width:420px){
     .wrapper_header{
         .wrapper_header__inp{

@@ -1,0 +1,209 @@
+.wrapper {
+    width: 576px;
+    min-height: 100vh;
+    background: var( --background-color);
+
+}
+
+.poster {
+    width: 100%;
+    min-height: 388px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .poster_img {
+        position: relative;
+        width: 220px;
+    }
+
+    .rating {
+        position: absolute;
+        min-height: 24px;
+        width: 24px;
+        top: 0;
+        right: -30px;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .poster__img {
+        width: 100%;
+        height: 285px;
+        border-radius: 22px;
+        box-shadow: 0 0 10px 2px #000000;
+    }
+}
+
+.container {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    padding: 20px 0;
+
+    .header {
+        width: 100%;
+        min-height: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        align-items: center;
+
+        .header__span {
+            font-family: Rubik;
+        }
+
+        .header_name__span {
+            font-size: 30px;
+            color: var(--header-text-color);
+            font-weight: bold;
+        }
+
+        .header_alt-name__span {
+            color: #757575;
+            font-size: 18px;
+        }
+    }
+
+    .description {
+        width: 100%;
+        min-height: 70px;
+        background: #724F99;
+        border-radius: 0 31px 0 31px;
+        padding: 10px 25px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .description__span {
+            font-size: 14px;
+            color: white;
+            font-family: Rubik;
+        }
+    }
+
+    .genres-nominations {
+        width: 100%;
+        min-height: 100px;
+        display: flex;
+        gap: 30px;
+        padding: 10px 15px;
+
+        .genres-nominations_item {
+            flex: 1 1;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+
+            .item__header {
+                width: 100%;
+                min-height: 20px;
+
+                .item__header__span {
+                    color: var(--header-text-color);
+                    font-size: 30px;
+                    font-family: Rubik;
+                }
+            }
+
+            .item_container {
+                width: 100%;
+                min-height: 20px;
+                display: flex;
+                flex-direction: column;
+                gap: 5px;
+                padding: 0 5px;
+
+                .item__container__span {
+                    font-size: 15px;
+                    font-family: Rubik;
+                }
+
+                .item_genre__span {
+                    color: #757575;
+                }
+            }
+
+            .item_container_nominations {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+
+                .nominations__div {
+                    width: fit-content;
+                    max-width: 250px;
+                    height: 26px;
+                    background: #00B127;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    border-radius: 50px;
+                    padding: 4.5px 10px;
+                }
+
+                .nominations__span {
+                    font-weight: bold;
+                    white-space: nowrap;
+                    color: white;
+
+                }
+            }
+        }
+    }
+
+    .watch {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .watch_btn {
+            width: 300px;
+            height: 60px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: white;
+            border-radius: 32px;
+            cursor: pointer;
+            text-decoration: none;
+            border: 1px solid  var( --search-border-inp);
+            .watch_btn__span {
+                font-size: 36px;
+                font-family: Rubik;
+                text-transform: uppercase;
+                color: #ACACAC;
+                font-weight: bold;
+                text-shadow: inset 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+
+
+@media screen and (max-width:575px) {
+    .wrapper {
+        width: 100%;
+
+    }
+}
+
+@media screen and (max-width:395px) {
+    .genres-nominations {
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width:320px) {
+    .container {
+        .watch {
+            .watch_btn {
+                width: 95%;
+            }
+        }
+    }
+
+}

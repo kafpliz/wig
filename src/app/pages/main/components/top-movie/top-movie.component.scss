@@ -20,7 +20,7 @@
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.40799999237060547px;
-    color: white;
+    color: var( --header-text-color);
 
 }
 
@@ -38,6 +38,10 @@
         height: 100%;
         border-radius: 25px;
         overflow: hidden;
+    }
+
+    .swiper-slide__a {
+        text-decoration: none;
     }
 
     .slide {
@@ -84,14 +88,15 @@
 }
 
 @media screen and (max-width:450px) {
-    .swiper{
-        swiper-slide{
+    .swiper {
+        swiper-slide {
             width: 100%;
         }
     }
 }
+
 @media screen and (max-width:400px) {
-    .wrapper_header__img{
+    .wrapper_header__img {
         display: none;
     }
 }

@@ -2,32 +2,131 @@ import { IGenre } from "../interfaces/genre.interface";
 
 export const genre: IGenre[] = [
     {
-        name: 'Комедии',
-        enName: 'comedies'
+      "name": "аниме",
+      "slug": "anime"
     },
     {
-        name: 'Боевики',
-        enName: 'fighters'
+      "name": "биография",
+      "slug": "biografiya"
     },
     {
-        name: 'Триллеры',
-        enName: 'thrillers'
+      "name": "боевик",
+      "slug": "boevik"
     },
     {
-        name: 'Фантастика',
-        enName: 'fantasy'
+      "name": "вестерн",
+      "slug": "vestern"
     },
     {
-        name: 'Драмы',
-        enName: 'drama'
+      "name": "военный",
+      "slug": "voennyy"
     },
     {
-        name: 'Ужасы',
-        enName: 'horror'
+      "name": "детектив",
+      "slug": "detektiv"
     },
     {
-        name: 'Мультфильмы',
-        enName: 'cartoon'
+      "name": "детский",
+      "slug": "detskiy"
     },
-
-]
+    {
+      "name": "для взрослых",
+      "slug": "dlya-vzroslyh"
+    },
+    {
+      "name": "документальный",
+      "slug": "dokumentalnyy"
+    },
+    {
+      "name": "драма",
+      "slug": "drama"
+    },
+    {
+      "name": "игра",
+      "slug": "igra"
+    },
+    {
+      "name": "история",
+      "slug": "istoriya"
+    },
+    {
+      "name": "комедия",
+      "slug": "komediya"
+    },
+    {
+      "name": "концерт",
+      "slug": "koncert"
+    },
+    {
+      "name": "короткометражка",
+      "slug": "korotkometrazhka"
+    },
+    {
+      "name": "криминал",
+      "slug": "kriminal"
+    },
+    {
+      "name": "мелодрама",
+      "slug": "melodrama"
+    },
+    {
+      "name": "музыка",
+      "slug": "muzyka"
+    },
+    {
+      "name": "мультфильм",
+      "slug": "multfilm"
+    },
+    {
+      "name": "мюзикл",
+      "slug": "myuzikl"
+    },
+    {
+      "name": "новости",
+      "slug": "novosti"
+    },
+    {
+      "name": "приключения",
+      "slug": "priklyucheniya"
+    },
+    {
+      "name": "реальное ТВ",
+      "slug": "realnoe-TV"
+    },
+    {
+      "name": "семейный",
+      "slug": "semeynyy"
+    },
+    {
+      "name": "спорт",
+      "slug": "sport"
+    },
+    {
+      "name": "ток-шоу",
+      "slug": "tok-shou"
+    },
+    {
+      "name": "триллер",
+      "slug": "triller"
+    },
+    {
+      "name": "ужасы",
+      "slug": "uzhasy"
+    },
+    {
+      "name": "фантастика",
+      "slug": "fantastika"
+    },
+    {
+      "name": "фильм-нуар",
+      "slug": "film-nuar"
+    },
+    {
+      "name": "фэнтези",
+      "slug": "fentezi"
+    },
+    {
+      "name": "церемония",
+      "slug": "ceremoniya"
+    }
+  ]

@@ -1,0 +1,41 @@
+{
+  "id": 1008444,
+  "type": "movie",
+  "name": "Дэдпул и Росомаха",
+  "rating":  7.5,
+  "description": "Уэйд Уилсон попадает в организацию «Управление временными изменениями», что вынуждает его вернуться к своему альтер-эго Дэдпулу и изменить историю с помощью Росомахи.",
+  "slogan": null,
+  "year": 2024,
+  "poster": {
+    "url": "https://image.openmoviedb.com/kinopoisk-images/10592371/35df2d41-69ee-42d2-a029-41fa52b03cc7/orig"
+  },
+  "genres": [
+    {
+      "name": "фантастика"
+    },
+    {
+      "name": "боевик"
+    },
+    {
+      "name": "комедия"
+    },
+    {
+      "name": "приключения"
+    }
+  ],
+  "lists": [
+    "Топ-500:18",
+    "Популярные фильмы",
+    "box-usa-all-time",
+    "box-world-not-usa",
+    "box-total",
+    "most-expensive"
+  ],
+
+  "alternativeName": "Deadpool & Wolverine",
+  "movieLength": 128,
+  "names": [],
+  "shortDescription": null,
+  "ageRating": null,
+  "link": "https://www.youtube.com/"
+}

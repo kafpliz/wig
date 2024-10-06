@@ -1,0 +1,42 @@
+<div class="wrapper">
+    <div class="wrapper_header">
+        <span class="wrapper_header__span">Личный кабинет</span>
+    </div>
+    <div class="settings">
+        <div class="settings_item">
+            <div class="settings_item_header__span">Покупка подписки</div>
+            <a href="#" class="settings_item_container settings_item_btn">
+                <span class="settings_item__span">
+                    Купить
+                </span>
+            </a>
+        </div>
+        <div class="settings_item">
+            <div class="settings_item_header__span">Состояние подписки</div>
+            <div  class="settings_item_container sub_condition">
+                <span class="settings_item__span">
+                   {{endDate?.message}}
+                </span>
+                <div class="sub_condition_circle" [ngClass]="getSubClass()"></div>
+            </div>
+        </div>
+        <div class="settings_item">
+            <div class="settings_item_header__span"></div>
+            <div  class="settings_item_container app_theme" (click)="changeTheme()">
+                @if (isDarkTheme) {
+                    <div class="app_theme__div">
+                <span class="settings_item__span">Светлая тема</span>
+                <img src="/assets/sun.svg" alt="" srcset="">
+               </div>
+                } @else {
+                    <div class="app_theme__div">
+                        <span class="settings_item__span">Тёмная тема</span>
+                        <img src="/assets/moon.svg" alt="" srcset="">
+                       </div>
+                }
+             
+
+            </div>
+        </div>
+    </div>
+</div>

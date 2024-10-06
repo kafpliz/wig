@@ -1,12 +1,15 @@
 <div class="wrapper">
     <div class="header">
-        <a class="header__a">Жанры</a>
-        <img src="/assets/chevron-left-lg.svg" alt="img" class="header__img">
+        <div class="header__div" routerLink="catalog"> 
+            <span class="header__a">Жанры</span>
+            <img src="/assets/chevron-left-lg.svg" alt="img" class="header__img">
+        </div>
+
     </div>
     <div class="container">
         @for (item of genres; track $index; let index = $index) {
         @if (index < 8) { <div class="container_item">
-            <a class="container_item__a">{{item.name}}</a>
+            <a class="container_item__a" routerLink="catalog" [queryParams]="{genre: item.slug}">{{item.name}}</a>
     </div>
     }
     }

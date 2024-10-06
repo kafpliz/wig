@@ -1,0 +1,58 @@
+<div class="wrapper">
+    <div class="poster"
+        style="background:  linear-gradient(0deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%),linear-gradient(180deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%), url({{movie?.poster?.url}}) no-repeat top 0 right 0 /cover;  ">
+        <div class="poster_img">
+            <img [src]="movie?.poster?.url" class="poster__img" alt="Poster">
+            <div class="rating" *ngIf="movie?.rating">
+                @for (item of ratingStars; track $index) {
+                    <img src="/assets/stars.svg" alt="star" srcset="">
+                }
+            </div>
+        </div>
+     
+        
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <span class="header_name__span header__span">{{movie?.name}}</span>
+            <span class="header_alt-name__span header__span">{{movie?.alternativeName}}, {{movie?.year}}</span>
+        </div>
+        <div class="description">
+            <span class="description__span">{{movie?.description}}</span>
+        </div>
+        <div class="genres-nominations">
+            <div class="genres-nominations_item">
+                <div class="item__header">
+                    <span class="item__header__span">Жанры</span>
+
+                </div>
+                <div class="item_container">
+                    @for (item of movie?.genres; track $index) {
+                    <span class="item_genre__span item__container__span">{{item.name}}</span>
+                    }
+                </div>
+            </div>
+            <div class="genres-nominations_item">
+                <div class="item__header">
+                    <span class="item__header__span">Номинации</span>
+
+                </div>
+                <div class="item_container item_container_nominations">
+                    @for (item of movie?.lists; track $index) {
+                    <div class="nominations__div">
+                        <span class="nominations__span">{{item}}</span>
+                    </div>
+                    }
+
+                </div>
+            </div>
+        </div>
+
+        <div class="watch">
+            <a [href]="movie?.link" class="watch_btn">
+                <span class="watch_btn__span">Смотреть</span>
+            </a>
+        </div>
+    </div>
+</div>

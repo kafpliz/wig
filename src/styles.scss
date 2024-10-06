@@ -3,6 +3,29 @@
     padding: 0;
     box-sizing: border-box;
 }
-
+:root{
+    --header-text-color:rgba(62, 55, 75, 1);
+    --background-color:white;
+    --background-genre:rgba(32, 21, 53, 1);
+    --innovation-text-color:rgba(36, 36, 36, 1);
+    --border-btn:black;
+    --search-border-inp:rgba(0, 0, 0, 0.25);
+    --genre-item-background: #E7E7E7;
+    --item-series-background: #201535;
+    --movie-gradient: #ffffff
+}
+[data-theme="dark"]{
+    --header-text-color:rgba(255, 255, 255, 1); 
+    --background-color:rgba(34, 18, 51, 1);
+    --background-genre:rgba(209, 10, 46, 1);
+    --innovation-text-color:white;
+    --border-btn:transparent;
+    --search-border-inp:transparent;
+    --genre-item-background:white;
+    --item-series-background: #201535;
+    --movie-gradient: rgba(34,18,51,1)
+}
 @import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap');

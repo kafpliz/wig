@@ -14,7 +14,7 @@
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.40799999237060547px;
-    color: white;
+    color: var(--header-text-color);
     
 }
 .catalog{
@@ -33,7 +33,9 @@
         border-radius: 25px;
         overflow: hidden;
     }
-
+    .slide__a{
+        text-decoration: none;
+    }
     .slide {
         width: 100%;
         height: 100%;

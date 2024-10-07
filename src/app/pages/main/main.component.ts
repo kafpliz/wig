@@ -26,7 +26,7 @@ export class MainComponent {
   #service = inject(MainService)
   mainData:IMain | null = null
   isApi:boolean = true
-  errorMes:string = ''
+ 
   ngOnInit(){
     new ThemeService().getTheme()
     this.#service.getData().subscribe(data=>{
@@ -34,7 +34,7 @@ export class MainComponent {
     }, error=> {
       if(error){
         console.log(error);
-        this.errorMes = `${error.status} / ${error.message}`
+    
         this.#service.sendError(error)
         this.isApi = false
       }

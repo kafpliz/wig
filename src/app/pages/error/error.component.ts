@@ -8,5 +8,5 @@ import { Component, input } from '@angular/core';
   styleUrl: './error.component.scss'
 })
 export class ErrorComponent {
-  mes = input()
+ 
 }

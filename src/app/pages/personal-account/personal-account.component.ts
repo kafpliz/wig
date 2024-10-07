@@ -28,8 +28,9 @@ export class PersonalAccountComponent {
       console.log(data);
       this.user = data;
       this.endDate = unixToDate(data.endDate)
-    }, error=> {
-      if(error){
+    }, error => {
+      if (error) {
+        this.#service.sendError(error)
         this.isApi = false
       }
     })

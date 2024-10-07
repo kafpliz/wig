@@ -32,8 +32,10 @@ export class MainComponent {
     this.#service.getData().subscribe(data=>{
       this.mainData = data
     }, error=> {
-      console.log(error);
       if(error){
+        console.log(error);
+        
+        this.#service.sendError(error)
         this.isApi = false
       }
     })

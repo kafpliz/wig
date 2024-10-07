@@ -12,6 +12,12 @@ export class BaseServiceService {
 
 
   handleError(error:HttpErrorResponse){
+    console.log('base',error);
+    if(error){
+    
+    }
+  
+
      return throwError(error);
   }
 }

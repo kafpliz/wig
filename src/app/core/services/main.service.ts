@@ -10,7 +10,7 @@ import { catchError } from 'rxjs';
 export class MainService extends BaseServiceService {
 
   getData() {
-    return this.http.get<IMain>(EMain.url +`/${this.tg.getUserId()}`).pipe(catchError(this.handleError))
+    return this.http.get<IMain>(EMain.url /* +`/${this.tg.getUserId()}` */).pipe(catchError(this.handleError))
  }
 
 

@@ -11,7 +11,7 @@ import { HttpErrorResponse } from '@angular/common/http';
 export class PersonalAccountService extends BaseServiceService {
 
   getData(){
-    return this.http.get<IPersonalAccount>(EPersonalAccount.url /* + `/${this.tg.getUserId()}` */).pipe(catchError(this.handleError))
+    return this.http.get<IPersonalAccount>(EPersonalAccount.url + `/${this.tg.getUserId()}`).pipe(catchError(this.handleError))
   }
   sendError(error:HttpErrorResponse) {
     const url: string = `${error.url}`

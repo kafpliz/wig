@@ -2,15 +2,22 @@
     width: 576px;
     min-height: 100vh;
     background: var(--background-color);
-    padding: 20px 30px;
+    padding: 20px 0;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-
+.container{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 0 30px;
+}
 .wrapper_header {
     width: 100%;
     min-height: 22px;
+    padding: 0 30px;
 }
 
 .wrapper_header__span {
@@ -30,6 +37,7 @@
     border: 1px solid #262626;
     border-radius: 10px;
     align-items: center;
+   
 }
 
 .settings_item {

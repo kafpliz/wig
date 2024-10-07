@@ -1,4 +1,5 @@
 <div class="wrapper">
+  @if (isApi) {
     <app-back-button />
     <div class="genres">
         @for (item of genres; track $index) {
@@ -22,4 +23,7 @@
             <span class="button__span">Вперёд</span>
             </div>
     </div>
+  } @else {
+    <app-error />
+  }
 </div>

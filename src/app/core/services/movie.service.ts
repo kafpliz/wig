@@ -9,6 +9,6 @@ import { IMovie } from '../../data/interfaces/movie.interface';
 export class MovieService extends BaseServiceService{
 
   getMovie(id:number){
-    return this.htpp.get<IMovie>(EMovie.url /* + `/${id}` */)
+    return this.http.get<IMovie>(EMovie.url /* + `/${id}` */)
   }
 }

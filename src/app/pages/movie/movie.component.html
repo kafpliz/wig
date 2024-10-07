@@ -1,4 +1,5 @@
 <div class="wrapper">
+    @if (isApi) {
     <app-back-button />
     <div class="poster"
         style="background:  linear-gradient(0deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%),linear-gradient(180deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%), url({{movie?.poster?.url}}) no-repeat top 0 right 0 /cover;  ">
@@ -6,12 +7,12 @@
             <img [src]="movie?.poster?.url" class="poster__img" alt="Poster">
             <div class="rating" *ngIf="movie?.rating">
                 @for (item of ratingStars; track $index) {
-                    <img src="/assets/stars.svg" alt="star" srcset="">
+                <img src="/assets/stars.svg" alt="star" srcset="">
                 }
             </div>
         </div>
-     
-        
+
+
     </div>
 
     <div class="container">
@@ -56,4 +57,7 @@
             </a>
         </div>
     </div>
+    } @else {
+        <app-error />
+    }
 </div>

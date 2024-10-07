@@ -5,7 +5,7 @@
     </div>
     <div class="wrapper_container">
         <swiper-container class="swiper" space-between="21" slides-per-view="auto">
-            @for (item of items; track $index) {
+            @for (item of items(); track $index) {
                 <swiper-slide >
                     <div class="rating" [ngClass]="getRatingClass(item.rating)">
                         <span class="rating__span">{{item.rating}}</span>

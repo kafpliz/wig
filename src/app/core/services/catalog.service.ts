@@ -11,6 +11,6 @@ export class CatalogService  extends BaseServiceService{
 
   getGenre(genre:string, page:number){
     let params = new HttpParams().set('genre', genre).set('page', page)
-    return this.htpp.get<ISearchCard[]>(ECatalog.url, {params})
+    return this.http.get<ISearchCard[]>(ECatalog.url, {params})
   }
 }

@@ -1,10 +1,17 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse } from '@angular/common/http';
 import { Injectable,inject } from '@angular/core';
+import { TelegramService } from './telegram.service';
+import { throwError } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class BaseServiceService {
-  htpp = inject(HttpClient)
+  http = inject(HttpClient)
+  tg = inject(TelegramService)
 
+
+  handleError(error:HttpErrorResponse){
+     return throwError(error);
+  }
 }

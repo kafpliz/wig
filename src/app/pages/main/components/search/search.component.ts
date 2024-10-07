@@ -4,7 +4,7 @@ import { SeacrhCardComponent } from "./components/seacrh-card/seacrh-card.compon
 import { FormsModule } from '@angular/forms';
 import { ISearchCard } from '../../../../data/interfaces/search-card.interface';
 import { RouterLink } from '@angular/router';
-import { SearchService } from '../../../../core/services/main/search.service';
+import { SearchService } from '../../../../core/services/search.service';
 
 @Component({
   selector: 'app-search',

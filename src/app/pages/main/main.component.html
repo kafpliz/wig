@@ -1,20 +1,27 @@
 <div class="wrapper">
-  
-    <app-watch-history />
-    <app-m-swiper />
-    <app-innovation />
-    <app-genres />
-    <app-top-movie />
-    <app-search />
-    @if (isRandomaizerActive == true) {
-        <app-randomaizer (closeModal)="changeState()"/>
-    }
-    
-    <div class="wrapper_button" (click)="changeState()">
-            <div class="wrapper_button_item">
-                <span class="wrapper_button_item__span">Рандомайзер</span>
-                <span class="wrapper_button_item__span">Когда не знаете что посмотреть</span>
+    @if (isApi) {
+        @if (mainData?.history) {
+            <app-watch-history [history]="mainData?.history" />
+            }
+            <app-m-swiper [slides]="mainData?.popular_movie" />
+            <app-innovation [items]="mainData?.innovation" />
+            <app-genres />
+            <app-top-movie [items]="mainData?.top_movie" />
+            <app-search />
+        
+            @if (isRandomaizerActive == true) {
+            <app-randomaizer (closeModal)="changeState()" />
+            }
+        
+            <div class="wrapper_button" (click)="changeState()">
+                <div class="wrapper_button_item">
+                    <span class="wrapper_button_item__span">Рандомайзер</span>
+                    <span class="wrapper_button_item__span">Когда не знаете что посмотреть</span>
+                </div>
             </div>
-    </div>
-
+        
+    } @else {
+      <app-error />
+    }
+   
 </div>

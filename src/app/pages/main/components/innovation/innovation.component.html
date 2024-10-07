@@ -7,7 +7,7 @@
     </div>
     <div class="catalog">
         <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20">
-            @for (item of items; track $index) {
+            @for (item of items(); track $index) {
                 <swiper-slide class="swiper-slide" >
                     <a href="" class="swiper-slide__a" routerLink="movie/{{item.id}}">
                         <div class="slide">

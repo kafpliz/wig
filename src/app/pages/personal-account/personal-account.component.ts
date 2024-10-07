@@ -5,11 +5,13 @@ import { unixToDate } from '../../shared/utils/utils';
 import { CommonModule } from '@angular/common';
 import { ThemeService } from '../../core/services/theme.service';
 import { BackButtonComponent } from "../back-button/back-button.component";
+import { ErrorComponent } from "../error/error.component";
+import { HttpEvent } from '@angular/common/http';
 
 @Component({
   selector: 'app-personal-account',
   standalone: true,
-  imports: [CommonModule, BackButtonComponent],
+  imports: [CommonModule, BackButtonComponent, ErrorComponent],
   templateUrl: './personal-account.component.html',
   styleUrl: './personal-account.component.scss'
 })
@@ -18,16 +20,20 @@ export class PersonalAccountComponent {
   user: IPersonalAccount | null = null
   endDate: { message: string, isSub: boolean } | null = null
   themeService = inject(ThemeService)
-
-   isDarkTheme = false;
+  isApi: boolean = true
+  isDarkTheme = false;
 
   ngOnInit() {
-    this.#service.getData('123').subscribe(data => {
+    this.#service.getData().subscribe(data => {
       console.log(data);
       this.user = data;
       this.endDate = unixToDate(data.endDate)
+    }, error=> {
+      if(error){
+        this.isApi = false
+      }
     })
-   
+
   }
 
   getSubClass() {

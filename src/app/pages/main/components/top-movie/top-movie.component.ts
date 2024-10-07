@@ -1,7 +1,6 @@
-import { CUSTOM_ELEMENTS_SCHEMA, Component, inject } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, inject, input } from '@angular/core';
 import { ITopMovie } from '../../../../data/interfaces/top-movie.interface';
 import { RouterLink } from '@angular/router';
-import { TopMovieService } from '../../../../core/services/main/top-movie.service';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -13,12 +12,10 @@ import { CommonModule } from '@angular/common';
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class TopMovieComponent {
-  #service = inject(TopMovieService)
-  items:ITopMovie[] = []
+  items= input<ITopMovie[]>()
+
   ngOnInit() {
-    this.#service.getTopMovie().subscribe((data) => {
-      this.items = data;
-    })
+  
   }
   getRatingClass(rating:number):string {
     if(rating >= 7){

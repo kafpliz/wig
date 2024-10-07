@@ -1,8 +1,8 @@
 import { CommonModule } from '@angular/common';
-import { Component, CUSTOM_ELEMENTS_SCHEMA, inject } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input } from '@angular/core';
 import { IInnovation } from '../../../../data/interfaces/innovation.interface';
 import { RouterLink } from '@angular/router';
-import { InnovationService } from '../../../../core/services/main/innovation.service';
+
 
 
 @Component({
@@ -14,14 +14,11 @@ import { InnovationService } from '../../../../core/services/main/innovation.ser
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InnovationComponent {
-  items:IInnovation[] = []
-  #service = inject(InnovationService)
+  items = input<IInnovation[]>()
+
 
   ngOnInit() {
-    this.#service.getInnovation().subscribe(data => {
-
-      this.items = data
-    })
+  
   }
   getRatingClass(rating:number):string {
     if(rating >= 7){

@@ -12,11 +12,11 @@ export class RandomService extends BaseServiceService {
   getRandom(genres: string[]) {
     const params = new HttpParams()
     if (genres.length > 0) {
-      return this.htpp.post<IRandom>(ERandom.url, { genres })
+      return this.http.post<IRandom>(ERandom.url, { genres })
     } else {
       console.log(500);
 
-      return this.htpp.get<IRandom>(ERandom.url)
+      return this.http.get<IRandom>(ERandom.url)
     }
 
   }

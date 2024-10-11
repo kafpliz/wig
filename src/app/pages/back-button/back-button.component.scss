@@ -15,6 +15,13 @@
             font-weight: 400;
             font-family: Rubik;
         }
+        .wrapper_img__svg{
+            width: 32px;
+            height: 32px;
+            .img__svg{
+                fill: var(--header-text-color);
+            }
+        }
     }
    
     

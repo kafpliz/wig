@@ -1,5 +1,8 @@
 <div class="wrapper">
     @if (isApi) {
+        <div class="profile" routerLink="/profile">
+            <img src="/assets/profile.svg" width="24" alt="" srcset="">
+        </div>
     <app-back-button />
     <div class="poster"
         style="background:  linear-gradient(0deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%),linear-gradient(180deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%), url({{movie?.poster?.url}}) no-repeat top 0 right 0 /cover;  ">

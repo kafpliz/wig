@@ -1,5 +1,8 @@
 <div class="wrapper">
   @if (isApi) {
+    <div class="profile" routerLink="/profile">
+        <img src="/assets/profile.svg" width="24" alt="" srcset="">
+    </div>
     <app-back-button />
     <div class="genres">
         @for (item of genres; track $index) {

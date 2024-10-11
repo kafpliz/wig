@@ -9,3 +9,8 @@ export interface IMain {
     top_movie: ITopMovie[]
     history: IWathHistory[]
 }
+
+
+export interface IMPing {
+    code:number
+}

@@ -11,7 +11,7 @@
                             <img class="img" [src]="item.poster">
                             <span class="card__span">{{item.name}}</span>
                             <div class="card_rating" [ngClass]="getRatingClass(item.rating)">
-                                <div class="rating__span">{{item.rating}}</div>
+                                <div class="rating__span">{{item.rating | roundToNearest}}</div>
                             </div>
                         </div>
                     </a>

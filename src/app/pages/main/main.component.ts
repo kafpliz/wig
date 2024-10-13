@@ -13,10 +13,6 @@ import { BackButtonComponent } from "../back-button/back-button.component";
 import { MainService } from '../../core/services/main.service';
 import { IMain } from '../../data/interfaces/main.interface';
 import { ErrorComponent } from "../error/error.component";
-import { IInnovation } from '../../data/interfaces/innovation.interface';
-import { ITopMovie } from '../../data/interfaces/top-movie.interface';
-import { IPopularMovie } from '../../data/interfaces/popular-movie.interface';
-import { IWathHistory } from '../../data/interfaces/wath-history.interface';
 
 @Component({
   selector: 'app-main',
@@ -29,26 +25,19 @@ export class MainComponent {
   isRandomaizerActive: boolean = false;
   #service = inject(MainService)
   mainData: IMain | null = null
-  innovations: IInnovation[] = []
-  top_movie: ITopMovie[] = []
-  popular_movie:IPopularMovie[] = []
-  history:IWathHistory[] = []
+
   isApi: boolean = true
 
   ngOnInit() {
     new ThemeService().getTheme()
 
     this.#service.checkPing().subscribe(data => {
-      if (data != 200) {
-        this.isApi = false
-      }
-    })
+    }, err => { if (err.status != 200) this.isApi = false })
 
     if (this.isApi) {
-      this.#service.getInnovations().subscribe(data => { this.innovations = data })
-      this.#service.getTop().subscribe(data => { this.top_movie = data })
-      this.#service.getPopular().subscribe(data => { this.popular_movie = data })
-      this.#service.getHistory().subscribe(data => { this.history = data })
+      this.#service.getMain().subscribe(data=> {
+        this.mainData = data
+      })
     }
 
 

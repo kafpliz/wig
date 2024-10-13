@@ -2,9 +2,13 @@
     <swiper-container class="swiper" pagination="true" pagination-dynamic-bullets="true">
         @for (item of slides(); track $index) {
             <swiper-slide class="swiper-slide">
-            <a href="" routerLink="movie/{{item.id}}"> 
-                <img [src]="item.poster" alt="Img" srcset="" class="swiper-slide__img">
-            </a>
+            <div class="swiper-slide__div" [routerLink]="['movie', item.id]" style="background: url({{item.poster}}) no-repeat top 0 left 0 /cover;">
+                <div class="swiper-slide_rating" [ngClass]="getRatingClass(item.rating)">
+                    <span class="swiper-slide_rating__span">{{item.rating | roundToNearest}}</span>
+                </div>
+                <span class="swiper-slide_name">{{item.name}}</span>
+            
+            </div>
             </swiper-slide>
         }
     </swiper-container>

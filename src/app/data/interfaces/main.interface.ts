@@ -7,7 +7,7 @@ export interface IMain {
     innovation: IInnovation[],
     popular_movie: IPopularMovie[],
     top_movie: ITopMovie[],
-    history: IWathHistory[] | undefined
+    history: IWathHistory[] 
 }
 
 

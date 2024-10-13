@@ -3,9 +3,9 @@
         <div class="profile" routerLink="profile">
             <img src="/assets/profile.svg" width="24" alt="" srcset="">
         </div>
-        @if (mainData?.history) {
-            <app-watch-history [history]="mainData?.history" />
-            }
+        @if (mainData && mainData.history && mainData.history.length > 0) {
+            <app-watch-history [history]="mainData.history" />
+        }
             <app-m-swiper [slides]="mainData?.popular_movie" />
             <app-innovation [items]="mainData?.innovation" />
             <app-genres />

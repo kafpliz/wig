@@ -17,7 +17,7 @@ import { IWathHistory } from '../../data/interfaces/wath-history.interface';
 export class MainService extends BaseServiceService {
 
   checkPing() {
-    return this.http.get<IMPing>(EMain.checkPing + /* `/${this.tg.getUserId()}` */  '/1231243', { observe: 'response' })
+    return this.http.get<IMPing>(EMain.checkPing + `/${this.tg.getUserId()}`, { observe: 'response' })
       .pipe(
         map((response: HttpResponse<IMPing>) => response.status)
       );
@@ -27,7 +27,7 @@ export class MainService extends BaseServiceService {
       this.http.get<IInnovation[]>(EMain.innovations),
       this.http.get<ITopMovie[]>(EMain.top),
       this.http.get<IPopularMovie[]>(EMain.banners),
-      this.http.get<IWathHistory[]>(EMain.history /*  + `/${this.tg.getUserId()}` */ )]
+      this.http.get<IWathHistory[]>(EMain.history  + `/${this.tg.getUserId()}` )]
     ).pipe(
       map(([data1, data2, data3, data4]) => ({innovation: data1, top_movie:data2 , popular_movie: data3, history: data4}))
     )

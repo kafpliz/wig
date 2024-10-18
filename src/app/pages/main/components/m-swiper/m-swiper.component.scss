@@ -8,22 +8,26 @@
     min-height: 100px;
 }
 
+
+
 .swiper-slide {
+    width: 100%;
     min-height: 160px;
     background: white;
     border-radius: 0;
     background: transparent;
     overflow: hidden;
     position: relative;
+    border-radius: 32px;
+    transform: scale(0.8);
+    transition: all .3s linear;
 }
 
-.swiper-slide:first-child {
-    border-radius: 32px 0 0 32px;
+.swiper-slide-active{
+    transform: scale(1.0);
 }
 
-.swiper-slide:last-child {
-    border-radius: 0 32px 32px 0;
-}
+
 
 
 

@@ -16,7 +16,17 @@ import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe
 })
 export class InnovationComponent {
   items = input<IInnovation[]>()
-
+  swiperConfig = {
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 3,
+      },
+      
+    }
+  };
 
   ngOnInit() {
   

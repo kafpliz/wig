@@ -4,7 +4,7 @@
         <img src="/assets/kp-logo.svg" class="wrapper_header__img">
     </div>
     <div class="wrapper_container">
-        <swiper-container class="swiper" space-between="21" slides-per-view="auto">
+        <swiper-container class="swiper" space-between="30" slides-per-view="auto">
             @for (item of items(); track $index) {
                 <swiper-slide >
                     <div class="rating" [ngClass]="getRatingClass(item.rating)">

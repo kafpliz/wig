@@ -3,7 +3,7 @@
         <span class="header__span">Новинки 2024</span>
     </div>
     <div class="catalog">
-        <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20">
+        <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20" loop="true">
             @for (item of items(); track $index) {
                 <swiper-slide class="swiper-slide" >
                     <a href="" class="swiper-slide__a" routerLink="movie/{{item.id}}">

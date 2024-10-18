@@ -1,5 +1,5 @@
 <div class="container">
-    <swiper-container class="swiper" pagination="true" pagination-dynamic-bullets="true">
+    <swiper-container class="swiper" pagination="true" slides-per-view="auto"  pagination-dynamic-bullets="true" space-between="20"  centered-slides="true" autoplay-delay="10000">
         @for (item of slides(); track $index) {
             <swiper-slide class="swiper-slide">
             <div class="swiper-slide__div" [routerLink]="['movie', item.id]" style="background: url({{item.poster}}) no-repeat top 0 left 0 /cover;">

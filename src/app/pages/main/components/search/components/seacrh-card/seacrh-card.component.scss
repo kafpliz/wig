@@ -4,10 +4,9 @@
     display: flex;
     gap: 25px;
 
-    .card_poster {
-        width: 155px;
+    .card_poster { 
         height: 100%;
-
+        flex: 1 1;
         overflow: hidden;
 
         .card_poster__img {
@@ -19,7 +18,7 @@
     }
 
     .card_info {
-
+        flex: 2 1;
         display: flex;
         flex-direction: column;
         gap: 15px;

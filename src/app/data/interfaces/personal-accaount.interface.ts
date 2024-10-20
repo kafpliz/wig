@@ -4,3 +4,8 @@ export interface IPersonalAccount {
     isSubscribe: boolean
     payUrl: string
 }
+export interface IPromocode {
+    success:boolean
+    msg: string
+    
+}

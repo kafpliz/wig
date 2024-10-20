@@ -1,3 +1,4 @@
 export enum EPersonalAccount{
-    url = '/assets/DB/pers.data.json'
+    url = 'https://bot.kino24wig.ru/api/user/profile',
+    promoUrl = 'https://bot.kino24wig.ru/api/user/profile/promo'
 }

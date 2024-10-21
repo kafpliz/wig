@@ -39,7 +39,9 @@ export class RandomaizerComponent {
 
     setTimeout(() => {
       this.#service.getRandom(this.genreActive || '').subscribe(data => {
-          this.#router.navigate(['/movie', data.id] )
+        console.log('data', data);
+        
+          this.#router.navigate(['/movie', data[0].id] )
 
       })
     }, 2000);

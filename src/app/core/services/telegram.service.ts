@@ -34,4 +34,7 @@ export class TelegramService {
   getUserId(){
     return this.tg.initDataUnsafe.user.id
   }
+  close(){
+    return this.tg.close()
+  }
 }

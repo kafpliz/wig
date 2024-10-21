@@ -55,8 +55,8 @@
         </div>
 
         <div class="watch">
-            <a [href]="movie?.link" class="watch_btn">
-                <span class="watch_btn__span">Смотреть</span>
+            <a  class="watch_btn">
+                <span class="watch_btn__span" (click)="send()">Смотреть</span>
             </a>
         </div>
     </div>

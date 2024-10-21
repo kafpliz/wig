@@ -16,23 +16,17 @@ export class RandomaizerComponent {
   animationActive: boolean = false
   public closeModal = output<boolean>()
   genres: IGenre[] = genre;
-  genreArr: string[] = []
+  genreActive: string | null = null;
   #service = inject(RandomService)
   #router = inject(Router)
-  isShow:boolean = false
-  addGenre(slug: string) {
-    const cad = this.genreArr.indexOf(slug)
+  isShow: boolean = false
 
-    if (cad == -1) {
-      this.genreArr.push(slug)
-    } else {
-      this.genreArr.splice(cad, 1)
-    }
-
+  addGenre(idx: string) {
+    this.genreActive = idx
   }
-  isActive(slug: string): boolean {
-    const cad = this.genreArr.indexOf(slug)
-    if (cad != -1) {
+
+  isActive(slug: string):boolean {
+    if(slug == this.genreActive){
       return true
     } else {
       return false
@@ -44,8 +38,8 @@ export class RandomaizerComponent {
     this.animationActive = true
 
     setTimeout(() => {
-      this.#service.getRandom(this.genreArr).subscribe(data => {
-       this.#router.navigate(['/catalog'] )
+      this.#service.getRandom(this.genreActive || '').subscribe(data => {
+          this.#router.navigate(['/movie', data.id] )
 
       })
     }, 2000);

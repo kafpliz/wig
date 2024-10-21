@@ -17,7 +17,7 @@ import { IWathHistory } from '../../data/interfaces/wath-history.interface';
 export class MainService extends BaseServiceService {
 
   checkPing() {
-    return this.http.get<IMPing>(EMain.checkPing + `/${this.tg.getUserId()}`  , { observe: 'response' })
+    return this.http.get<IMPing>(EMain.checkPing + `/${this.tg.getUserId()}`   , { observe: 'response' })
       .pipe(
         map((response: HttpResponse<IMPing>) => response.status)
       );

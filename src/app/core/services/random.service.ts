@@ -9,15 +9,20 @@ import { HttpParams } from '@angular/common/http';
 })
 export class RandomService extends BaseServiceService {
 
-  getRandom(genres: string[]) {
-    const params = new HttpParams()
-    if (genres.length > 0) {
-      return this.http.post<IRandom>(ERandom.url, { genres })
-    } else {
-      console.log(500);
+    getRandom(genres: string) {
 
-      return this.http.get<IRandom>(ERandom.url)
+      if (genres.length > 1) {
+        const params = new HttpParams().set('genre', genres)
+      
+        return this.http.get<IRandom>(ERandom.url, { params })
+      } else {
+        return this.http.get<IRandom>(ERandom.url,)
+      }
+
+
+
+
+
+
     }
-
-  }
 }

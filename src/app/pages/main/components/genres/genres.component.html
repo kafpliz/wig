@@ -9,7 +9,7 @@
     <div class="container">
         @for (item of genres; track $index; let index = $index) {
         @if (index < 8) { <div class="container_item">
-            <a class="container_item__a" routerLink="catalog" [queryParams]="{genre: item.slug}">{{item.name}}</a>
+            <a class="container_item__a" routerLink="catalog" [queryParams]="{genre: item.name}">{{item.name}}</a>
     </div>
     }
     }

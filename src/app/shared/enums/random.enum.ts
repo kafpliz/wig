@@ -1,3 +1,3 @@
 export enum ERandom{
-    url = '/assets/DB/movie.data.json'
+    url = 'https://bot.kino24wig.ru/api/films/random'
 }

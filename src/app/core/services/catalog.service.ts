@@ -9,8 +9,15 @@ import { ISearchCard } from '../../data/interfaces/search-card.interface';
 })
 export class CatalogService  extends BaseServiceService{
 
-  getGenre(genre:string, page:number){
-    let params = new HttpParams().set('genre', genre).set('page', page)
-    return this.http.get<ISearchCard[]>(ECatalog.url, {params})
+  getGenre(genre:string){
+    
+    if(genre){
+      let params = new HttpParams().set('name', genre)
+      return this.http.get<ISearchCard[]>(ECatalog.url, {params})
+    } else {
+      let params = new HttpParams().set('name', 'биография')
+      return this.http.get<ISearchCard[]>(ECatalog.url,{params} )
+    }
+   
   }
 }

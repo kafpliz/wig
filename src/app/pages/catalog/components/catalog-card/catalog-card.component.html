@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card_poster"> <img [src]="card()?.poster" class="card_poster__img" alt=""></div>
+    <div class="card_poster"> <img [src]="card()?.poster?.url" class="card_poster__img" alt=""></div>
 
     <div class="card_info">
         <div class="card_info_names">
@@ -47,7 +47,7 @@
             }
             <span class="genres_item item_series">{{card.type | searchCardType}}</span>
             @for (item of card.genres; track $index ;let idx = $index) {
-            @if(idx < 4){ <span class="genres_item">{{item}}</span>
+            @if(idx < 4){ <span class="genres_item">{{item.name}}</span>
 
                 }
                 }

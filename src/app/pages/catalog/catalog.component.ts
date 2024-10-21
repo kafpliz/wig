@@ -28,11 +28,9 @@ export class CatalogComponent {
   ngOnInit() {
     this.#route.queryParams.subscribe((param: any) => {
       this.activeGenre = param.genre
-      console.log(param);
-
-      console.log(this.activeGenre);
-      this.#service.getGenre(param.genre, this.page).subscribe(data => {
-        console.log(data);
+   
+      this.#service.getGenre(param.genre).subscribe(data => {
+     
         this.cards = data
       }, error => {
         if (error) {
@@ -45,27 +43,11 @@ export class CatalogComponent {
     new ThemeService().getTheme()
   }
 
-  changePage(side: boolean) {
-    if (side == true) {
-
-      this.#service.getGenre(this.activeGenre, ++this.page).subscribe(data => {
-        console.log(data);
-
-      })
 
 
 
-    } else {
-      if (this.page != 1) {
-        this.#service.getGenre(this.activeGenre, --this.page).subscribe(data => {
-          console.log(data);
-
-        })
-      }
 
 
 
-    }
-  }
 
 }

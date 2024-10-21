@@ -6,7 +6,7 @@
     <app-back-button />
     <div class="genres">
         @for (item of genres; track $index) {
-            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.slug}">
+            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}">
                 <span class="genres_item__span" routerLinkActive="active">{{item.name}}</span>
             </div>
         }
@@ -14,18 +14,11 @@
     </div>
     <div class="cards">
         @for (item of cards; track $index) {
-            <app-catalog-card [card]="item"/>
+            <app-catalog-card [card]="item" [routerLink]="['/movie', item.id]"/>
         }
        
     </div>
-    <div class="buttons">
-        <div class="button" (click)="changePage(false)">
-            <span class="button__span">Назад</span>
-        </div>
-        <div class="button" (click)="changePage(true)">
-            <span class="button__span">Вперёд</span>
-            </div>
-    </div>
+   
   } @else {
     <app-error />
   }

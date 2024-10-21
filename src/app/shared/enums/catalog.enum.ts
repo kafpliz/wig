@@ -1,3 +1,3 @@
 export enum ECatalog {
-    url = '/assets/DB/search.data.json'
+    url = 'https://bot.kino24wig.ru/api/films/genres'
 }

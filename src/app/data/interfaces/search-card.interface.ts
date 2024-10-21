@@ -3,10 +3,10 @@ export interface ISearchCard {
     name: string
     alternativeName: string
     names: string[] | null
-    poster: string
+    poster: {url:string}
     lists: string[] | null
     type: string
-    genres: string[]
+    genres: [{name:string}]
     releaseYears: number[] | null
     movieLength: number | null
     year: number | null

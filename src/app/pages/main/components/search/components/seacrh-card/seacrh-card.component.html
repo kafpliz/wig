@@ -47,7 +47,7 @@
             }
             <span class="genres_item item_series">{{card.type | searchCardType}}</span>
             @for (item of card.genres; track $index ;let idx = $index) {
-            @if(idx < 4){ <span class="genres_item">{{item}}</span>
+            @if(idx < 4){ <span class="genres_item">{{item.name}}</span>
 
                 }
                 }

@@ -12,7 +12,7 @@ export class RandomService extends BaseServiceService {
     getRandom(genres: string) {
 
       if (genres.length > 1) {
-        const params = new HttpParams().set('genre', genres)
+        const params = new HttpParams().set('name', genres)
       
         return this.http.get<IRandom>(ERandom.url, { params })
       } else {

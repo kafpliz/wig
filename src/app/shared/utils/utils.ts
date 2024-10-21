@@ -16,8 +16,12 @@ export let ratingProcent = (part: number): number[] => {
 }
 
 export function unixToDate(unixTime:number | boolean) {
-    if(unixTime != false && typeof unixTime == 'number'){
-        const date = new Date(unixTime * 1000);
+    console.log(unixTime, typeof unixTime);
+    
+    if(unixTime != false){
+        const unTime = Number(unixTime)
+
+        const date = new Date(unTime * 1000);
         let time = date.toLocaleDateString(); 
         return {message: 'Активна до ' + time, isSub: true}
     } else {

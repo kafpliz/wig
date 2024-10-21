@@ -24,6 +24,7 @@ export class PersonalAccountComponent {
   isDarkTheme = false;
   promo = ''
   promInf:IPromocode | null = null
+  
   ngOnInit() {
     this.#service.getData().subscribe(data => {
       console.log(data);
@@ -46,13 +47,7 @@ export class PersonalAccountComponent {
     
   }
 
-  getSubClass() {
-    if (this.endDate?.isSub == false) {
-      return 'sub_condition_circle-red'
-    } else {
-      return 'sub_condition_circle-green'
-    }
-  }
+
 
   changeTheme() {
     this.isDarkTheme = !this.isDarkTheme;

@@ -16,9 +16,9 @@
                 <div class="genres">
                  <span class="genres__span" (click)="isShow = !isShow">По жанрам</span>
                  <div class="genres_container" *ngIf="isShow" >
-                    <span class="genres_container__span" (click)="addGenre('all-genres')"  [ngClass]="{'genres_container__span-active': isActive('all-genres')}">Все жанры</span>
+                    <span class="genres_container__span" (click)="addGenre('all-genres')" (click)="allActive()"  [ngClass]="{'genres_container__span-active': isActive('all-genres')}">Все жанры</span>
                     @for (item of genres; track $index; let idx = $index;) {
-                        <span class="genres_container__span" (click)="addGenre(item.name)"  [ngClass]="{'genres_container__span-active': isActive(item.slug)}">{{item.name}}</span>
+                        <span class="genres_container__span" (click)="addGenre(item.name)"   [ngClass]="{'genres_container__span-active': isActive(item.name), 'genres_container__span-all_active': allActiveG}">{{item.name}}</span>
                     }
                  </div>
                 </div>

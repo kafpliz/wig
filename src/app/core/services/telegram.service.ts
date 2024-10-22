@@ -35,6 +35,6 @@ export class TelegramService {
     return this.tg.initDataUnsafe.user.id
   }
   close(){
-    return this.tg.close()
+   return this.tg.close()
   }
 }

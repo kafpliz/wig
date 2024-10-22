@@ -19,4 +19,7 @@ export class MovieService extends BaseServiceService{
     const params = new HttpParams().set('id', this.tg.getUserId() ).set('film', this.#filmId)
     return this.http.get(EMovie.urlS, {params} )
   }
+  close(){
+    this.tg.close()
+  }
 }

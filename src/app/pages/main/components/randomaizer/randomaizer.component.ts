@@ -17,12 +17,17 @@ export class RandomaizerComponent {
   public closeModal = output<boolean>()
   genres: IGenre[] = genre;
   genreActive: string | null = null;
+  allActiveG:boolean = false
   #service = inject(RandomService)
   #router = inject(Router)
   isShow: boolean = false
 
   addGenre(idx: string) {
     this.genreActive = idx
+  }
+
+  allActive(){
+    this.allActiveG = !this.allActiveG
   }
 
   isActive(slug: string):boolean {

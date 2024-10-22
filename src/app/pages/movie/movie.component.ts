@@ -7,7 +7,6 @@ import { ratingProcent } from '../../shared/utils/utils';
 import { ThemeService } from '../../core/services/theme.service';
 import { BackButtonComponent } from "../back-button/back-button.component";
 import { ErrorComponent } from "../error/error.component";
-import { TelegramService } from '../../core/services/telegram.service';
 
 @Component({
   selector: 'app-movie',
@@ -19,7 +18,7 @@ import { TelegramService } from '../../core/services/telegram.service';
 export class MovieComponent {
   #service = inject(MovieService)
   #route = inject(ActivatedRoute)
-  #tg = inject(TelegramService)
+  
   movie: IMovie | null = null;
   ratingStars: number[] = []
   themeService = inject(ThemeService)
@@ -45,7 +44,7 @@ export class MovieComponent {
 
   send(){
     this.#service.sendFilm().subscribe(data=>{
-      this.#tg.close()
+      this.#service.close()
       
     })
   }

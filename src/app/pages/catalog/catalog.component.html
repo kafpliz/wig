@@ -6,7 +6,7 @@
     <app-back-button />
     <div class="genres">
         @for (item of genres; track $index) {
-            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}">
+            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}" routerLinkActive="genres_item-active">
                 <span class="genres_item__span" routerLinkActive="active">{{item.name}}</span>
             </div>
         }

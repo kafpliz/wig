@@ -74,6 +74,7 @@
         border-radius: 6px;
         display: grid;
         place-items: center;
+        cursor: pointer;
 
         .settings_item__span {
             font-family: Manrope;
@@ -151,6 +152,14 @@
         }
     }
 
+    .settings_item_container-copied{
+        display: flex;
+        gap: 10px;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s linear;
+        background: #02a302;
+    }
 }
 
 
@@ -165,12 +174,15 @@
     .wrapper {
         padding: 20px 10px;
     }
-
+    .container{
+        padding: 0;
+    }
 }
 
-@media screen and (max-width:340px) {
+@media screen and (max-width:360px) {
     .settings_item {
-        width: 100%;
+        width: 90%;
+   
     }
-
+   
 }

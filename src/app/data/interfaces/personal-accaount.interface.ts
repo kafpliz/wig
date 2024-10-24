@@ -3,6 +3,7 @@ export interface IPersonalAccount {
     endDate: number | boolean
     isSubscribe: boolean
     payUrl: string
+    refUrl:string
 }
 export interface IPromocode {
     success:boolean

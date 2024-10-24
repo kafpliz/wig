@@ -20,6 +20,6 @@ export class MovieService extends BaseServiceService{
     return this.http.get(EMovie.urlS, {params} )
   }
   close(){
-    this.tg.close()
+    return this.tg.close()
   }
 }

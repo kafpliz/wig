@@ -12,7 +12,7 @@ import { ErrorComponent } from "../error/error.component";
 @Component({
   selector: 'app-catalog',
   standalone: true,
-  imports: [RouterLink, CatalogCardComponent, BackButtonComponent, ErrorComponent],
+  imports: [RouterLink, CatalogCardComponent, BackButtonComponent, ErrorComponent,RouterLinkActive],
   templateUrl: './catalog.component.html',
   styleUrl: './catalog.component.scss'
 })

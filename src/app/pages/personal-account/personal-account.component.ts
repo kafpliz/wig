@@ -23,8 +23,9 @@ export class PersonalAccountComponent {
   isApi: boolean = true
   isDarkTheme = false;
   promo = ''
-  promInf:IPromocode | null = null
-  
+  promInf: IPromocode | null = null
+  isCopy:boolean = false;
+
   ngOnInit() {
     this.#service.getData().subscribe(data => {
       console.log(data);
@@ -39,15 +40,22 @@ export class PersonalAccountComponent {
 
   }
 
-  sendPomo(){
-   this.#service.sendPromo(this.promo).subscribe(data=> {
-    console.log(data);
+  sendPomo() {
+    this.#service.sendPromo(this.promo).subscribe(data => {
+      console.log(data);
       this.promInf = data
-   })
-    
+    })
+
   }
 
+  copyRef(ref?: string) {
+    if (ref) {
+      navigator.clipboard.writeText(ref).then(() => {
+        this.isCopy = true
+      }).catch()
+    }
 
+  }
 
   changeTheme() {
     this.isDarkTheme = !this.isDarkTheme;

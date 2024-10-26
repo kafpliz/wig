@@ -1,5 +1,6 @@
 import { Location } from '@angular/common';
-import { Component, inject } from '@angular/core';
+import { Component, inject,input } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-back-button',
@@ -10,7 +11,16 @@ import { Component, inject } from '@angular/core';
 })
 export class BackButtonComponent {
   #location = inject(Location)
+  catalog = input<boolean>(true)
+  #router = inject(Router)
   locationBack() {
-    this.#location.back()
+    console.log(this.catalog());
+    
+    if(this.catalog() == true){
+      this.#router.navigate(['/'])
+    } else {
+      this.#location.back()
+    }
+    
   }
 }

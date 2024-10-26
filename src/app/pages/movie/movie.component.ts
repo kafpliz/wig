@@ -42,10 +42,10 @@ export class MovieComponent {
     this.themeService.getTheme()
   }
 
-  send(){
-    this.#service.sendFilm().subscribe(data=>{
-      this.#service.close()
-      
-    })
-  }
+    send(){
+      this.#service.sendFilm(this.movie?.link).subscribe(data=>{
+        this.#service.close()
+        
+      })
+    }
 }

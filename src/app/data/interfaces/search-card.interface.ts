@@ -1,6 +1,7 @@
 export interface ISearchCard {
     id:number
     name: string
+    rating: number
     alternativeName: string
     names: string[] | null
     poster: {url:string}

@@ -5,21 +5,21 @@ import { IMovie } from '../../data/interfaces/movie.interface';
 import { HttpParams } from '@angular/common/http';
 
 @Injectable({
-  providedIn: 'root' 
+  providedIn: 'root'
 })
-export class MovieService extends BaseServiceService{
-  #filmId:number = 0;
-  getMovie(id:number){
+export class MovieService extends BaseServiceService {
+  #filmId: number = 0;
+  getMovie(id: number) {
     this.#filmId = id
-    return this.http.get<IMovie>(EMovie.url + `/${id}` + `/${this.tg.getUserId()}` )
+    return this.http.get<IMovie>(EMovie.url + `/${id}` + `/${this.tg.getUserId()}`)
   }
 
-  sendFilm(){
-    console.log(this.#filmId);
-    const params = new HttpParams().set('id', this.tg.getUserId() ).set('film', this.#filmId)
-    return this.http.get(EMovie.urlS, {params} )
+  sendFilm(fl?: string) {
+    const filmLink = fl
+    const params = new HttpParams().set('id', this.tg.getUserId()).set('film', this.#filmId)
+    return this.http.get(EMovie.urlS, { params })
   }
-  close(){
+  close() {
     return this.tg.close()
   }
 }

@@ -8,12 +8,40 @@
         height: 100%;
         flex: 1 1;
         overflow: hidden;
+        position: relative;
 
         .card_poster__img {
             border-radius: 16px;
             border: 1px solid rgba(255, 255, 255, 0.5);
             width: 100%;
             height: 100%;
+        }
+        .card_rating {
+            width: 50px;
+            height: 26px;
+            border-radius: 8px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+        .card_rating-positive {
+            background: rgba(0, 177, 39, 1);
+        }
+
+        .card_rating-negative {
+            background: rgba(240, 106, 48, 1);
+        }
+
+        .rating__span {
+            font-family: Jost;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.40799999237060547px;
+            color: white;
         }
     }
 

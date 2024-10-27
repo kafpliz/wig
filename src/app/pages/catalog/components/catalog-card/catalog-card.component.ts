@@ -15,7 +15,10 @@ export class CatalogCardComponent {
   public card = input<ISearchCard>()
 
   getRatingClass(rating:any): string {
-    if(rating >= 7){
+    console.log(rating);
+    
+    let rat = Number(rating)
+    if(rat >= 7){
       return 'card_rating-positive'
     } else {
       return 'card_rating-negative'

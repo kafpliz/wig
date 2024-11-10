@@ -26,6 +26,20 @@
         <div class="description">
             <span class="description__span">{{movie?.description}}</span>
         </div>
+        <div class="persons">
+            <div class="persons_container">
+                @for (item of movie?.persons; track $index) {
+                    <div class="person">  
+                        <span class="person__span">{{item.name}}</span>
+                        <img class="person__img" [src]="item.photo">
+                        <span class="person__span">{{item.profession}}</span>
+
+                    </div>
+                }
+          
+            </div>
+                
+        </div>
         <div class="genres-nominations">
             <div class="genres-nominations_item">
                 <div class="item__header">
@@ -60,6 +74,7 @@
             </a>
         </div>
     </div>
+
     } @else {
         <app-error />
     }

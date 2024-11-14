@@ -185,7 +185,7 @@
 
 .persons {
     width: 100%;
-    height: 300px;
+    min-height: 300px;
     padding: 0 20px;
 
     .persons_container {
@@ -209,10 +209,7 @@
             .person__span{
                 font-family: Rubik;
                 font-size: 18px;
-                color: white; 
-                white-space: nowrap;
-                text-overflow: ellipsis;
-                overflow: hidden;
+                color: var(--header-text-color);
                 width: 100%;
             }
             .person__img{

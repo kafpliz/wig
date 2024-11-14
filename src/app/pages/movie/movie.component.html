@@ -30,9 +30,10 @@
             <div class="persons_container">
                 @for (item of movie?.persons; track $index) {
                     <div class="person">  
-                        <span class="person__span">{{item.name}}</span>
-                        <img class="person__img" [src]="item.photo">
                         <span class="person__span">{{item.profession}}</span>
+                       
+                        <img class="person__img" [src]="item.photo">
+                        <span class="person__span">{{item.name}}</span>
 
                     </div>
                 }

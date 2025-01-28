@@ -1,5 +1,5 @@
 <div class="card">
-    <div class="card_poster"> 
+    <div class="card_poster">
         <img [src]="card()?.poster" class="card_poster__img" alt="">
         <div class="card_rating" [ngClass]="getRatingClass(card()?.rating)">
             <div class="rating__span">{{card()?.rating ?? 0 | roundToNearest}}</div>
@@ -9,34 +9,11 @@
     <div class="card_info">
         <div class="card_info_names">
             @if (card(); as card) {
-            @if (card?.name) {
-            <span class="card_info_names__span">{{card.name}}</span>
-            @if (card.type == 'movie' ) {
-            <span class="card_info_names__span">{{card?.alternativeName ? card.alternativeName + ', ' + card.year :
-                card.name + ', ' + card.year}}</span>
-            } @else if(card.type == 'series' && card.releaseYears != null){
-            <span class="card_info_names__span">{{card?.alternativeName ? card.alternativeName + ' ' + '(' +
-                card.releaseYears[0] + '-' + card.releaseYears[1] + ')' : card.name + ' ' + '(' + card.releaseYears[0]
-                +'-' + card.releaseYears[1] + ')'}}</span>
-            }
-            } @else if (card?.alternativeName) {
-            <span class="card_info_names__span">{{card.alternativeName}}</span>
-            @if (card.type == 'movie' && card.names) {
-            <span class="card_info_names__span">{{card.alternativeName + ', ' + card.year}}</span>
-            } @else if(card.type == 'series' && card.releaseYears != null ){
-            <span class="card_info_names__span">{{card.alternativeName + ' ' + '(' + card.releaseYears[0] + '-' +
-                card.releaseYears[1] + ')'}}</span>
-            }
-            } @else if (card.names != null ) {
-            <span class="card_info_names__span">{{card.names[0]}}</span>
-            @if (card.type == 'movie') {
-            <span class="card_info_names__span">{{card.names[0] + ', ' + card.year}}</span>
-            } @else if(card.releaseYears) {
-            <span class="card_info_names__span">{{card.names[0] + ' ' + '(' + card.releaseYears[0] + '-' +
-                card.releaseYears[1] + ')'}}</span>
-            }
 
-            } @else {
+            <span class="card_info_names__span" *ngIf="card.name">{{card.name}}</span>
+            <span class="card_info_names__span" *ngIf="card.alternativeName">{{card.alternativeName}}</span>
+
+            @if (!card?.name && !card.alternativeName) {
             <span class="card_info_names__span">Название отсуствует</span>
             }
             }

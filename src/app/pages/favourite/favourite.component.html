@@ -1,0 +1,13 @@
+<div class="wrapper">
+    <h2 class="wrapper__h2">Избранное</h2>
+    <div class="catalog">
+        @if (favourite) {
+             @for (item of favourite; track $index) {
+                <app-seacrh-card [card]="item" />
+            }
+        }
+        @else { 
+            <span class="catalog__span">Пусто...</span>
+        }
+    </div>
+</div>

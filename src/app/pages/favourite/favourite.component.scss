@@ -1,0 +1,30 @@
+.wrapper{
+    width: 100%;
+    min-height: 100vh;
+    background: var(--background-color);
+    padding: 10px 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    .wrapper__h2{
+        color: var(--header-text-color);
+        font-family: Open Sans;
+        font-weight: 700;
+        font-size: 30px;
+    }
+}
+
+.catalog{
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.catalog__span{
+    color: var(--header-text-color);
+    font-family: Open Sans;
+    font-weight: 700;
+    font-size: 30px;
+    align-self: center;
+}

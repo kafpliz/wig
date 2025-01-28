@@ -7,7 +7,7 @@ export interface ISearchCard {
     poster: {url:string}
     lists: string[] | null
     type: string
-    genres: [{name:string}]
+    genres: {name:string}[]
     releaseYears: number[] | null
     movieLength: number | null
     year: number | null

@@ -63,6 +63,24 @@
     text-decoration: none;
     color: black;
 }
+.favourite{
+    width: auto;
+    height: 100%;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    .icon{
+        width: 30px;
+        height: 30px;
+    }
+    .favourite__span{
+        color: white;
+        font-family: Open Sans;
+        font-weight: 700;
+        font-size: 18px;
+     
+    }
+}
 @media screen and (max-width:420px){
     .wrapper_header{
         .wrapper_header__inp{

@@ -1,9 +1,6 @@
 <div class="wrapper">
   @if (isApi) {
-    <div class="profile" routerLink="/profile">
-        <img src="/assets/profile.svg" width="24" alt="" srcset="">
-    </div>
-    <app-back-button [catalog]="true"/>
+
     <div class="genres">
         @for (item of genres; track $index) {
             <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}" routerLinkActive="genres_item-active">

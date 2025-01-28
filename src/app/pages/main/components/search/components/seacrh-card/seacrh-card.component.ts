@@ -14,7 +14,9 @@ import { CommonModule } from '@angular/common';
 })
 export class SeacrhCardComponent {
    public card = input<ISearchCard>()
-
+    ngOnInit(){
+      
+    }
    getRatingClass(rating:any): string {
     if(rating >= 7){
       return 'card_rating-positive'

@@ -1,2 +1,17 @@
+<div class="wrapper">
+    <div class="nav">
+        @if (isEnabled) {
+        <app-back-button />
+        }
+        <div class="profile" routerLink="/profile">
+            <img src="/assets/profile.svg" width="24" alt="" srcset="">
+        </div>
 
-<router-outlet></router-outlet>
+
+    </div>
+    <router-outlet></router-outlet>
+
+    @if (isNotif) {
+    <app-notifications [message]="message" />
+    }
+</div>

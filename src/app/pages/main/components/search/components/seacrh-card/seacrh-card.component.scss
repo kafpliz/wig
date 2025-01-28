@@ -53,7 +53,7 @@
 
         .card_info_names {
             width: 100%;
-            min-height: 48px;
+            min-height: 28px;
             display: flex;
             flex-direction: column;
             gap: 3px;
@@ -66,19 +66,20 @@
 
             }
 
-            .card_info_names__span:first-child {
-                color: var( --header-text-color);
-                font-family: Rubik;
-                font-size: 22px;
-                font-weight: 500;
-                line-height: 26.07px;
+                .card_info_names__span:first-child {
+                    color: var( --header-text-color);
+                    font-family: Rubik;
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 26.07px;
+                }
 
-
-            }
-
-            .card_info_names__span:last-child {
-                color: rgba(117, 117, 117, 1);
-            }
+                .card_info_names__span:last-child {
+                    color: rgba(117, 117, 117, 1);
+                }
+                .card_info_names__span:only-child {
+                    color: var( --header-text-color);
+                  }
 
         }
 

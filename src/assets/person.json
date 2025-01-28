@@ -1,0 +1,416 @@
+{
+    "id": 2899541,
+    "name": "Космо Джарвис",
+    "enName": "Cosmo Jarvis",
+    "photo": "https://avatars.mds.yandex.net/get-kinopoisk-image/1704946/b6e6a351-0dab-4c89-a1d0-ac06a38d7841/orig",
+    "lifeTime": {
+        "start": "1939-07-28",
+        "end": "1939-07-28"
+    },
+    "age": 35,
+    "genres": [
+        "комедия",
+        "драма",
+        "корометражка"
+    ],
+    "birthPlace": [
+        "Ridgewood",
+        "New Jersey",
+        "USA"
+    ],
+    "profession": [
+        "Актёр",
+        "Сценарист",
+        "Продюсер"
+    ],
+    "bestMovie": [
+        {
+            "id": 5455250,
+            "name": "Война",
+            "alternativeName": "Warfare",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "year": 2002
+        },
+        {
+            "id": 5105864,
+            "name": null,
+            "alternativeName": "Alto Knights",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "year": 2042
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "year": 2012
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "year": 2012
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "year": 2012
+        }
+    ],
+    "actor": [
+        {
+            "id": 5455250,
+            "name": "Война | ACTOR",
+            "alternativeName": "Warfare",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "боевик"
+                },
+                {
+                    "name": "триллер"
+                },
+                {
+                    "name": "драма"
+                }
+            ]
+        },
+        {
+            "id": 5105864,
+            "name": null,
+            "alternativeName": "Alto Knights",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун | ACTOR",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "мультфильм"
+                },
+                {
+                    "name": "фэнтези"
+                },
+                {
+                    "name": "комедия"
+                },
+                {
+                    "name": "семейный"
+                }
+            ]
+        },
+        {
+            "id": 6728952,
+            "name": "Внутри | ACTOR",
+            "alternativeName": "Inside",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "криминал"
+                }
+            ]
+        },
+        {
+            "id": 4380104,
+            "name": null,
+            "alternativeName": "It Is in Us All",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "мелодрама"
+                },
+                {
+                    "name": "комедия"
+                }
+            ]
+        },
+        {
+            "id": 4479621,
+            "name": "Доводы рассудка | ACTOR",
+            "alternativeName": "Persuasion",
+            "rating": 6.084,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        }
+    ],
+    "screenwriter": [
+        {
+            "id": 5455250,
+            "name": "Война | СЦЕНАРИСТ",
+            "alternativeName": "Warfare",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "боевик"
+                },
+                {
+                    "name": "триллер"
+                },
+                {
+                    "name": "драма"
+                }
+            ]
+        },
+        {
+            "id": 5105864,
+            "name": null,
+            "alternativeName": "Alto Knights",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун | СЦЕНАРИСТ",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "мультфильм"
+                },
+                {
+                    "name": "фэнтези"
+                },
+                {
+                    "name": "комедия"
+                },
+                {
+                    "name": "семейный"
+                }
+            ]
+        },
+        {
+            "id": 6728952,
+            "name": "Внутри | СЦЕНАРИСТ",
+            "alternativeName": "Inside",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "криминал"
+                }
+            ]
+        },
+        {
+            "id": 4380104,
+            "name": null,
+            "alternativeName": "It Is in Us All",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "мелодрама"
+                },
+                {
+                    "name": "комедия"
+                }
+            ]
+        },
+        {
+            "id": 4479621,
+            "name": "Доводы рассудка | СЦЕНАРИСТ",
+            "alternativeName": "Persuasion",
+            "rating": 6.084,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        }
+    ],
+    "producer": [
+        {
+            "id": 5455250,
+            "name": "Война | ПроДЮСЕР",
+            "alternativeName": "Warfare",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "боевик"
+                },
+                {
+                    "name": "триллер"
+                },
+                {
+                    "name": "драма"
+                }
+            ]
+        },
+        {
+            "id": 5105864,
+            "name": null,
+            "alternativeName": "Alto Knights | ПроДЮСЕР",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        },
+        {
+            "id": 749562,
+            "name": "Сёгун | ПроДЮСЕР",
+            "alternativeName": "Shôgun",
+            "rating": 8.026,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "мультфильм"
+                },
+                {
+                    "name": "фэнтези"
+                },
+                {
+                    "name": "комедия"
+                },
+                {
+                    "name": "семейный"
+                }
+            ]
+        },
+        {
+            "id": 6728952,
+            "name": "Внутри | ПроДЮСЕР",
+            "alternativeName": "Inside",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "криминал"
+                }
+            ]
+        },
+        {
+            "id": 4380104,
+            "name": null,
+            "alternativeName": "It Is in Us All",
+            "rating": null,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "драма"
+                },
+                {
+                    "name": "мелодрама"
+                },
+                {
+                    "name": "комедия"
+                }
+            ]
+        },
+        {
+            "id": 4479621,
+            "name": "Доводы рассудка | ПроДЮСЕР",
+            "alternativeName": "Persuasion",
+            "rating": 6.084,
+            "poster": "https://st.kp.yandex.net/images/film_iphone/iphone360_5461927.jpg",
+            "ageRating": 18,
+            "type": "фильм",
+            "year": "2025",
+            "genres": [
+                {
+                    "name": "документальный"
+                }
+            ]
+        }
+    ]
+}

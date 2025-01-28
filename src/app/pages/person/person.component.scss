@@ -1,0 +1,291 @@
+.wrapper {
+    width: 576px;
+    min-height: 100vh;
+    background: var(--background-color);
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px 22px;
+}
+
+.header {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+
+    gap: 10px;
+}
+
+.photo {
+    width: 200px;
+
+    img {
+        width: 100%;
+        border-radius: 14px;
+    }
+}
+
+.info {
+    flex: 1 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    .item {
+        flex: 1 1;
+        display: flex;
+        flex-direction: column;
+        gap: 3px;
+        align-items: flex-start;
+
+        .item__h2 {
+            color: var(--header-text-color);
+            font-family: Open Sans;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .item__span {
+            font-family: Open Sans;
+            font-weight: 700;
+            font-size: 18px;
+        }
+
+        .item__span-grey {
+            color: #757575;
+        }
+
+
+        .proffesions {
+            display: flex;
+            gap: 20px;
+
+            .item_profession {
+                position: relative;
+
+
+                .item_profession__span {
+                    color: var(--header-text-color);
+                    font-weight: 300;
+                    font-family: Open Sans;
+                    font-size: 18px;
+                }
+
+                .item_profession__span::first-letter {
+                    text-transform: uppercase;
+
+                }
+
+
+            }
+
+            .item_profession::after {
+                content: '';
+                width: 3px;
+                height: 3px;
+                background-color: white;
+                border-radius: 50%;
+                position: absolute;
+                right: -10px;
+                top: 50%;
+                transform: translateY(-50%);
+            }
+
+            .item_profession:last-child::after {
+                content: none;
+            }
+        }
+
+        .life {
+            display: flex;
+            flex-direction: column;
+
+            .lifetime {
+                color: white;
+                display: flex;
+                gap: 15px;
+                flex-wrap: wrap;
+                .lifetime__span {
+                    font-weight: 400;
+                    position: relative;
+                    font-size: 14px;
+                }
+
+                .lifetime_age:last-child::before {
+                    content: "";
+                    width: 4px;
+                    height: 4px;
+                    background: white;
+                    border-radius: 50%;
+                    position: absolute;
+                    left: -10px;
+                    top: 50%;
+                }
+            }
+
+            .birthPlace__span {
+                font-weight: 400;
+                color: white;
+                font-size: 14px;
+            }
+        }
+
+        .item_genres {
+            font-weight: 300;
+        }
+
+        .item_genres::first-letter {
+            text-transform: uppercase;
+        }
+
+    }
+
+    .item:nth-child(2) {
+        gap: 5px;
+    }
+
+    .item:nth-child(3) {
+        color: white;
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+
+    }
+
+}
+
+.bestMovie {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    min-height: 300px;
+
+    .bestMovie__span {
+        color: var(--header-text-color);
+        font-family: Open Sans;
+        font-weight: 700;
+        font-size: 25px;
+    }
+}
+
+.movies {
+    width: 100%;
+    min-height: 300px;
+    display: flex;
+    gap: 20px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+
+    .movie {
+        width: 200px;
+        min-height: 350px;
+        position: relative;
+        flex-shrink: 0;
+
+        .poster {
+            width: 100%;
+
+            img {
+                width: 100%;
+                border-radius: 25px;
+                border: 1px solid #b4b4b4;
+            }
+        }
+
+        .name {
+            width: 100%;
+            min-height: 10px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+        }
+
+        .movie__span {
+            color: var(--header-text-color);
+            font-family: Open Sans;
+            font-weight: 400;
+            font-size: 18px;
+            display: -webkit-box;
+            -webkit-box-orient: vertical;
+            -webkit-line-clamp: 2;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+
+        .movie__span:last-child {
+            color: #b4b4b4;
+        }
+
+        .rating {
+            width: 50px;
+            height: 30px;
+            border-radius: 7px;
+            position: absolute;
+            left: 15px;
+            top: 10px;
+            display: grid;
+            place-items: center;
+
+            .rating__span {
+                color: white;
+                font-family: Open Sans;
+                font-weight: 900;
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+.filmography {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.filmography_tabs {
+    width: 100%;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    .filmography_tabs__span{
+        color: var(--header-text-color);
+        font-family: Open Sans;
+        font-weight: 700;
+        font-size: 25px;
+    }
+}
+.tabs{
+    width: 100%;
+    min-height: 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+        .tab{
+            flex: 1 1;
+            border: 1px solid ;
+            border-radius: 7px;
+            background: #650b74;
+            display: grid;
+            place-items: center;
+            .tabs__span{
+                color: var(--header-text-color);
+                font-family: Open Sans;
+                font-weight: 600;
+                font-size: 18px;
+            }
+        }
+        .tab-active{
+            background: #666666;
+        }
+}
+.filmography_content {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}

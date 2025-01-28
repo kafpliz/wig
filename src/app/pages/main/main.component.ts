@@ -17,7 +17,7 @@ import { ErrorComponent } from "../error/error.component";
 @Component({
   selector: 'app-main',
   standalone: true,
-  imports: [MSwiperComponent, InnovationComponent, GenresComponent, TopMovieComponent, SearchComponent, WatchHistoryComponent, RandomaizerComponent, CommonModule, RouterLink, BackButtonComponent, ErrorComponent],
+  imports: [MSwiperComponent, InnovationComponent, GenresComponent, TopMovieComponent, SearchComponent, WatchHistoryComponent, RandomaizerComponent, CommonModule,  ErrorComponent],
   templateUrl: './main.component.html',
   styleUrl: './main.component.scss'
 })

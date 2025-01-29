@@ -15,13 +15,13 @@
 
     .persons_container {
         width: 100%;
-        height: 620px;
+        min-height: 620px;
         display: grid;
         overflow-x: auto;
         scroll-snap-type: x mandatory;
         grid-auto-flow: column;
         grid-auto-columns: 170px;
-        grid-template-rows: repeat(2, 300px);
+        grid-template-rows: repeat(2, 330px);
         gap: 10px;
 
 
@@ -38,8 +38,16 @@
                 font-size: 18px;
                 color: var(--header-text-color);
                 width: 100%;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
-
+            .profession__span{
+                font-size: 14px;
+                color: #938989;
+            }
             .person__img {
                 width: 100%;
                 height: 250px;

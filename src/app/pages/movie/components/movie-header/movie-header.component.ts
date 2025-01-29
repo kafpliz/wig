@@ -3,6 +3,7 @@ import { DataSharedService } from '../../../../core/services/data-shared.service
 import { CommonModule } from '@angular/common';
 import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe';
 import { IMovieHeader } from '../../../../data/interfaces/movie.interface';
+import { MovieService } from '../../../../core/services/movie.service';
 
 @Component({
   selector: 'app-movie-header',
@@ -16,11 +17,11 @@ export class MovieHeaderComponent {
   isFavourite: boolean = false
   data = input<IMovieHeader | null>(null)
   header!: IMovieHeader;
-
+  #service = inject(MovieService)
   ngOnInit() {
       this.header = this.data()! 
-
   }
+
   copy() {
     navigator.clipboard.writeText(window.location.href).then(() => {
       this.#dataShared.changeMessage('Скопировано')
@@ -28,8 +29,11 @@ export class MovieHeaderComponent {
   }
 
   addFavourites() {
-    this.#dataShared.changeMessage('Добавлено')
-    this.isFavourite = true
+    this.#service.addFavourite(this.header.id).subscribe(data=> {
+      this.#dataShared.changeMessage('Добавлено')
+      this.isFavourite = true
+    })
+   
   }
 
   checkRatingStyle(): string {

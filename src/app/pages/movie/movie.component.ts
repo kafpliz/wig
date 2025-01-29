@@ -41,6 +41,7 @@ export class MovieComponent {
 
         }
         this.header = {
+          id: this.movie.id,
           name: this.movie.name,
           alternativeName: this.movie.alternativeName,
           year: this.movie.year,

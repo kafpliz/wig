@@ -39,5 +39,15 @@ export class AppComponent {
       }
     
     })
+
+    this.#router.events.subscribe(event=> {
+      if(event instanceof NavigationEnd){  
+         const urlWithoutQueryParams = event.urlAfterRedirects.split('?')
+         if(!urlWithoutQueryParams[1]){
+            window.scrollTo(0,0)
+         }
+       
+      }
+    })
   }
 }

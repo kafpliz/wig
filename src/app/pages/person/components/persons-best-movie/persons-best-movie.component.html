@@ -2,7 +2,7 @@
     <span class="bestMovie__span">Лучшие фильмы и сериалы</span>
     <div class="movies">
         @for (item of bestMovie; track $index) {
-        <div class="movie">
+        <div class="movie" [routerLink]="['../../movie', item.id]">
             <div class="poster">
                 <img [src]="item.poster" alt="Img poster">
             </div>

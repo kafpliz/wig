@@ -2,11 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, input } from '@angular/core';
 import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe';
 import { IPersonsBestMovie } from '../../../../data/interfaces/person.interface';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-persons-best-movie',
   standalone: true,
-  imports: [CommonModule, RoundToNearestPipe],
+  imports: [CommonModule, RoundToNearestPipe,RouterLink],
   templateUrl: './persons-best-movie.component.html',
   styleUrl: './persons-best-movie.component.scss'
 })

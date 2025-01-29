@@ -25,9 +25,10 @@ export interface IPersonsShort{
     name: string
     photo: string
     enName: string
+    profession:string
 }
 export interface IPersonsBestMovie{
-    
+   
         id: number
         name: string
         alternativeName: string

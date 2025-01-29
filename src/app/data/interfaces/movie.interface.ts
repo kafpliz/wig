@@ -20,6 +20,7 @@ export interface IMovie {
     persons: IPersonsShort[]
 }
 export interface IMovieHeader{
+    id:number
     name: string
     alternativeName: string
     year: string

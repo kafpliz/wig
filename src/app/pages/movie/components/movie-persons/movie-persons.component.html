@@ -7,7 +7,7 @@
                    <img class="person__img" [src]="item.photo">
                    <span class="person__span" *ngIf="item.name">{{item.name }}</span>
                    <span class="person__span" *ngIf="!item.name">{{item.enName }}</span>
-                   <span class="person__span profession__span">{{item.profession}}</span>
+                   <span class="person__span profession__span">{{item.profession | stringEnds}}</span>
                 </div>
             }
     }

@@ -1,0 +1,22 @@
+<div class="bestMovie">
+    <span class="bestMovie__span">Лучшие фильмы и сериалы</span>
+    <div class="movies">
+        @for (item of bestMovie; track $index) {
+        <div class="movie">
+            <div class="poster">
+                <img [src]="item.poster" alt="Img poster">
+            </div>
+            <div class="name">
+                <span class="movie__span">{{item.name}}</span>
+                <span class="movie__span">{{item.alternativeName}}, {{item.year}}</span>
+            </div>
+            @if(item.rating){
+            <div class="rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
+                <span class="rating__span">{{item.rating| roundToNearest}}</span>
+            </div>
+            }
+
+        </div>
+        }
+    </div>
+</div>

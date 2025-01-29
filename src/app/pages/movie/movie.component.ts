@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MovieService } from '../../core/services/movie.service';
 import { ActivatedRoute, RouterLink, } from '@angular/router';
-import { IMovie } from '../../data/interfaces/movie.interface';
+import { IMovie, IMovieGenresNominations, IMovieHeader } from '../../data/interfaces/movie.interface';
 import { CommonModule } from '@angular/common';
 import { ratingProcent } from '../../shared/utils/utils';
 import { ThemeService } from '../../core/services/theme.service';
@@ -9,23 +9,28 @@ import { BackButtonComponent } from "../back-button/back-button.component";
 import { ErrorComponent } from "../error/error.component";
 import { RoundToNearestPipe } from '../../core/pipes/round-to-nearest.pipe';
 import { DataSharedService } from '../../core/services/data-shared.service.service';
+import { MoviePersonsComponent } from "./components/movie-persons/movie-persons.component";
+import { MovieRatingComponent } from "./components/movie-rating/movie-rating.component";
+import { MovieHeaderComponent } from "./components/movie-header/movie-header.component";
+import { MovieGenresNominationsComponent } from "./components/movie-genres-nominations/movie-genres-nominations.component";
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, RouterLink, ErrorComponent, RoundToNearestPipe],
+  imports: [CommonModule, ErrorComponent, MoviePersonsComponent, MovieRatingComponent, MovieHeaderComponent, MovieGenresNominationsComponent],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
 export class MovieComponent {
   #service = inject(MovieService)
   #route = inject(ActivatedRoute)
-  #dataShared = inject(DataSharedService)
+
   movie!: IMovie;
   ratingStars: number[] = []
   themeService = inject(ThemeService)
-  isApi:boolean = true
-  isFavourite:boolean = false
+  isApi: boolean = true
+  header!: IMovieHeader
+  gen_nom!: IMovieGenresNominations
   ngOnInit() {
     this.#route.params.subscribe(param => {
       const movieID = param['id']
@@ -35,8 +40,19 @@ export class MovieComponent {
           this.ratingStars = ratingProcent(this.movie.rating)
 
         }
-      }, error=> {
-        if(error){
+        this.header = {
+          name: this.movie.name,
+          alternativeName: this.movie.alternativeName,
+          year: this.movie.year,
+          link: this.movie.link,
+          rating: this.movie.rating,
+        }
+        this.gen_nom = {
+          genres: this.movie.genres,
+          lists: this.movie.lists,
+        }
+      }, error => {
+        if (error) {
           this.isApi = false
         }
       })
@@ -44,24 +60,10 @@ export class MovieComponent {
     this.themeService.getTheme()
   }
 
-  send(){
-      this.#service.sendFilm(this.movie?.link).subscribe(data=>{
-        this.#service.close()
+  send() {
+    this.#service.sendFilm(this.movie?.link).subscribe(data => {
+      this.#service.close()
     })
   }
 
-  copy(){
-    navigator.clipboard.writeText(window.location.href).then(()=> {
-        this.#dataShared.changeMessage('Скопировано')
-    })
-  }
-
-  addFavourites(){
-    this.#dataShared.changeMessage('Добавлено')
-    this.isFavourite = true
-  }
-
-  checkRatingStyle():string{
-    return this.movie.rating >= 7 ? '#8FD14F' : this.movie.rating <= 6 ? '#DA0063' : '#FAC710'
-  }
 }

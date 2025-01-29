@@ -19,7 +19,7 @@
     min-height: 100px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    gap: 30px;
 }
 .catalog__span{
     color: var(--header-text-color);
@@ -28,3 +28,11 @@
     font-size: 30px;
     align-self: center;
 }
+
+
+@media screen and (max-width:375px) {
+    .wrapper{
+        padding: 5px 6px;
+    }
+  
+  }

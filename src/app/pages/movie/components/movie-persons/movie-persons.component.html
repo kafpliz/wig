@@ -1,0 +1,14 @@
+<div class="persons">
+    <h2 class="persons__h2">Актёры и съёмочная группа</h2>
+    <div class="persons_container">
+        @if (persons()) {
+            @for (item of persons(); track $index) {
+                <div class="person" [routerLink]="['../../person', item.id]">
+                   <img class="person__img" [src]="item.photo">
+                   <span class="person__span">{{item.name}}</span>
+                </div>
+            }
+    }
+    </div>
+
+</div>

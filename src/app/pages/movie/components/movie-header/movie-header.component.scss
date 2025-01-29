@@ -1,0 +1,124 @@
+.header {
+    width: 100%;
+    min-height: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    align-items: center;
+
+
+    .name {
+        display: flex;
+        flex-direction: column;
+        gap: 13px;
+        position: relative;
+        max-width: 70%;
+        align-items: center;
+
+        .header__span {
+            font-family: Rubik;
+        }
+
+        .header_name__span {
+            font-size: 30px;
+            color: var(--header-text-color);
+            font-weight: bold;
+            text-align: center;
+        }
+
+        .header_alt-name__span {
+            color: #757575;
+            font-size: 18px;
+        }
+
+        .rating {
+            background: #8FD14F;
+            width: 50px;
+            height: 30px;
+            border-radius: 7px;
+            position: absolute;
+            right: -55px;
+            top: -20px;
+            display: grid;
+            place-items: center;
+
+            .rating__span {
+                color: white;
+                font-family: Open Sans;
+                font-weight: 900;
+                font-size: 20px;
+            }
+        }
+    }
+
+    .panel {
+        width: 100%;
+        min-height: 75px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+
+        .panel_item {
+            width: 125px;
+            min-height: 55px;
+            display: flex;
+            flex-direction: column;
+            gap: 2px;
+            align-items: center;
+            cursor: pointer;
+            
+            .panel_item_img {
+                width: 30px;
+                height: 30px;
+
+                .panel_item_img_svg {
+                    transform: rotate(45deg);
+                }
+            }
+
+            .panel_item__span {
+                color: white;
+                font-family: Open Sans;
+                font-weight: 700;
+                font-size: 13px;
+            }
+        }
+
+        .panel_item-watch {
+            width: 200px;
+            min-height: 75px;
+            background-color: #9510AC;
+            border-radius: 15px;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+
+            .panel_item__span-watch {
+                color: white;
+                font-family: Open Sans;
+                font-weight: 700;
+                font-size: 30px;
+            }
+        }
+    }
+}
+
+
+@media screen and (max-width:354px) {
+    .header{
+        .panel{
+            gap: 10px;
+            .panel_item{
+                .panel_item__span-watch{
+                    font-size: 20px;
+                }
+            }
+            .panel_item-watch{
+                width: 170px;
+                min-height: 50px;
+            }
+        }
+    }
+}

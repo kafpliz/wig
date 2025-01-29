@@ -39,47 +39,6 @@
             </div>
         </div>
     </div>
-    <div class="bestMovie">
-        <span class="bestMovie__span">Лучшие фильмы и сериалы</span>
-        <div class="movies">
-            @for (item of person.bestMovie; track $index) {
-            <div class="movie">
-                <div class="poster">
-                    <img [src]="item.poster" alt="Img poster">
-                </div>
-                <div class="name">
-                    <span class="movie__span">{{item.name}}</span>
-                    <span class="movie__span">{{item.alternativeName}}, {{item.year}}</span>
-                </div>
-                @if(item.rating){
-                <div class="rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
-                    <span class="rating__span">{{item.rating| roundToNearest}}</span>
-                </div>
-                }
-
-            </div>
-            }
-        </div>
-    </div>
-    <div class="filmography">
-        <div class="filmography_tabs">
-            <span class="filmography_tabs__span">Фильмография</span>
-            <div class="tabs">
-                <div class="tab" *ngIf="person.actor" [ngClass]="{'tab-active': tabs[0]}" (click)="changeTab(0)">
-                    <span class="tabs__span">Актёр</span>
-                </div>
-                <div class="tab" *ngIf="person.screenwriter" [ngClass]="{'tab-active': tabs[1]}" (click)="changeTab(1)">
-                    <span class="tabs__span">Сценарист</span>
-                </div>
-                <div class="tab" *ngIf="person.producer" [ngClass]="{'tab-active': tabs[2]}" (click)="changeTab(2)">
-                    <span class="tabs__span">Продюсер</span>
-                </div>
-            </div>
-        </div>
-        <div class="filmography_content">
-            @for (item of content; track $index) {
-            <app-seacrh-card [card]="item" [routerLink]="['../../movie', item.id]"/>
-            }
-        </div>
-    </div>
+    <app-persons-best-movie [data]="bestMovie"/>
+    <app-persons-filmography [getData]="person"/>
 </div>

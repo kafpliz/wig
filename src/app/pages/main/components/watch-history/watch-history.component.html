@@ -1,7 +1,7 @@
 <div class="wrapper">
     <span class="wrapper_header__span">История просмотра</span>
     <div class="catalog"> 
-        <swiper-container class="swiper" space-between="0" slides-per-view="auto"  space-between="20">
+        <swiper-container class="swiper" slides-per-view="auto"  space-between="20">
             @for (item of history(); track $index) {
             <swiper-slide>
                 <a href="" class="slide__a" routerLink="movie/{{item.id}}">

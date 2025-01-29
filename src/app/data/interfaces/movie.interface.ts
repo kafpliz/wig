@@ -1,3 +1,5 @@
+import { IPersonsShort } from "./person.interface"
+
 export interface IMovie {
     id: number
     type: string
@@ -15,13 +17,16 @@ export interface IMovie {
     shortDescription: string
     ageRating: number,
     link: string
-    persons: [{
-        id: number
-        name: string
-        photo: string
-        enName: string
-        description: string
-        profession: string
-        enProfession: string
-    }]
+    persons: IPersonsShort[]
+}
+export interface IMovieHeader{
+    name: string
+    alternativeName: string
+    year: string
+    link: string
+    rating: number
+}
+export interface IMovieGenresNominations{
+    genres: [{ name: string }]
+    lists: string[]
 }

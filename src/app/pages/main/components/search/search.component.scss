@@ -75,10 +75,13 @@
     .icon {
         width: 30px;
         height: 30px;
+        .icon__svg{
+            fill: var(--color);
+        }
     }
 
     .favourite__span {
-        color: white;
+        color: var(--color);
         font-family: Open Sans;
         font-weight: 700;
         font-size: 18px;

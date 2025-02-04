@@ -1,21 +1,52 @@
 <div class="filmography">
     <div class="filmography_tabs">
         <span class="filmography_tabs__span">Фильмография</span>
-        <div class="tabs">
-            <div class="tab" *ngIf="data.actor" [ngClass]="{'tab-active': tabs[0]}" (click)="changeTab(0)">
-                <span class="tabs__span">Актёр</span>
-            </div>
-            <div class="tab" *ngIf="data.screenwriter" [ngClass]="{'tab-active': tabs[1]}" (click)="changeTab(1)">
-                <span class="tabs__span">Сценарист</span>
-            </div>
-            <div class="tab" *ngIf="data.producer" [ngClass]="{'tab-active': tabs[2]}" (click)="changeTab(2)">
-                <span class="tabs__span">Продюсер</span>
-            </div>
-        </div>
+        <swiper-container class="tabs" space-between="30" slides-per-view="2">
+       
+                <swiper-slide class="tab" *ngIf="data.actor" [ngClass]="{'tab-active': tabs[0]}" (click)="changeTab(data.actor, 0)">
+                        <span class="tabs__span">Актёр</span>
+        
+                </swiper-slide>
+                <swiper-slide class="tab" *ngIf="data.composer" [ngClass]="{'tab-active': tabs[1]}" (click)="changeTab(data.composer, 1)">
+                        <span class="tabs__span">композитор</span>
+        
+                </swiper-slide>  
+                 <swiper-slide class="tab" *ngIf="data.producer" [ngClass]="{'tab-active': tabs[2]}" (click)="changeTab(data.producer,2)">
+                        <span class="tabs__span">продюсер</span>
+        
+                </swiper-slide>
+                <swiper-slide class="tab" *ngIf="data.artist" [ngClass]="{'tab-active': tabs[3]}" (click)="changeTab(data.artist,3)">
+                        <span class="tabs__span">художник</span>
+        
+                </swiper-slide>
+                <swiper-slide class="tab" *ngIf="data.director" [ngClass]="{'tab-active': tabs[4]}" (click)="changeTab(data.director,4)">
+                        <span class="tabs__span">режиссер</span>
+        
+                </swiper-slide>
+                <swiper-slide class="tab" *ngIf="data.editor" [ngClass]="{'tab-active': tabs[5]}" (click)="changeTab(data.editor,5)">
+                        <span class="tabs__span">монтажер</span>
+        
+                </swiper-slide>
+                <swiper-slide class="tab" *ngIf="data.operator" [ngClass]="{'tab-active': tabs[6]}" (click)="changeTab(data.operator,6)">
+                        <span class="tabs__span">оператор</span>
+        
+                </swiper-slide>
+             
+                <swiper-slide class="tab" *ngIf="data.screenwriter" [ngClass]="{'tab-active': tabs[7]}" (click)="changeTab(data.screenwriter,7)">
+                        <span class="tabs__span">сценарист</span>
+        
+                </swiper-slide>
+            
+         
+           
+
+
+        </swiper-container>
+ 
     </div>
     <div class="filmography_content">
         @for (item of content; track $index) {
-        <app-seacrh-card [card]="item" [routerLink]="['../../movie', item.id]"/>
+        <app-seacrh-card [card]="item" [routerLink]="['../../movie', item.id]" />
         }
     </div>
 </div>

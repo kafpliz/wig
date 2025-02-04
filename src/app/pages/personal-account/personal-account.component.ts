@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 @Component({
   selector: 'app-personal-account',
   standalone: true,
-  imports: [CommonModule, BackButtonComponent, ErrorComponent, FormsModule],
+  imports: [CommonModule,  ErrorComponent, FormsModule],
   templateUrl: './personal-account.component.html',
   styleUrl: './personal-account.component.scss'
 })
@@ -21,7 +21,7 @@ export class PersonalAccountComponent {
   endDate: { message: string, isSub: boolean } | null = null
   themeService = inject(ThemeService)
   isApi: boolean = true
-  isDarkTheme = false;
+  isDarkTheme = true;
   promo = ''
   promInf: IPromocode | null = null
   isCopy:boolean = false;

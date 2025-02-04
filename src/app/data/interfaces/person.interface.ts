@@ -18,7 +18,11 @@ export interface IPersons {
     screenwriter:ISearchCard[]
     producer:ISearchCard[]
     actor:ISearchCard[]
-
+    composer:ISearchCard[]
+    artist:ISearchCard[]
+    director:ISearchCard[]
+    editor:ISearchCard[]
+    operator:ISearchCard[]
 }
 export interface IPersonsShort{
     id: number

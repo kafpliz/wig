@@ -1,4 +1,4 @@
-import { Component, input } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, Component, input } from '@angular/core';
 import { ISearchCard } from '../../../../data/interfaces/search-card.interface';
 import { CommonModule } from '@angular/common';
 import { SeacrhCardComponent } from '../../../main/components/search/components/seacrh-card/seacrh-card.component';
@@ -10,10 +10,11 @@ import { IPersons } from '../../../../data/interfaces/person.interface';
   standalone: true,
   imports: [CommonModule, SeacrhCardComponent, RouterLink],
   templateUrl: './persons-filmography.component.html',
-  styleUrl: './persons-filmography.component.scss'
+  styleUrl: './persons-filmography.component.scss',
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class PersonsFilmographyComponent {
-  tabs:boolean[] = [false, false, false]
+  tabs:boolean[] = new Array(8).fill(false)
   content!:ISearchCard[]
   getData = input<IPersons>()
   data!:IPersons
@@ -23,9 +24,9 @@ export class PersonsFilmographyComponent {
     this.tabs[0] ? this.content = this.data.actor : this.tabs[1] ? this.content = this.data.screenwriter : this.content = this.data.producer
   }
 
-  changeTab(index:number){
-    this.tabs = new Array(3).fill(false)
+  changeTab(data:ISearchCard[],index:number){
+    this.tabs = new Array(8).fill(false)
     this.tabs[index] = true;
-    this.tabs[0] ? this.content = this.data.actor : this.tabs[1] ? this.content = this.data.screenwriter : this.content = this.data.producer
+    this.content = data
   }
 }

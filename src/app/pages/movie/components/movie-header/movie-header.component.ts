@@ -37,6 +37,6 @@ export class MovieHeaderComponent {
   }
 
   checkRatingStyle(): string {
-    return this.header.rating >= 7 ? '#8FD14F' : this.header.rating <= 6 ? '#DA0063' : '#FAC710'
+    return this.header.rating >= 8.5 ? 'linear-gradient(250deg, rgba(241,255,0,1) 0%, rgba(255,0,0,1) 0%, rgba(255,0,189,1) 100%)': this.header.rating >= 7 ? '#8FD14F' : this.header.rating <= 6 ? 'red' : '#FAC710'
   }
 }

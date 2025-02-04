@@ -1,16 +1,16 @@
 <div class="wrapper">
     <div class="header">
-        <span class="header__span">Новинки 2024</span>
+        <span class="header__span">Новинки кино</span>
     </div>
     <div class="catalog">
-        <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20" loop="true">
+        <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20" loop="true" centered-slides="true">
             @for (item of items(); track $index) {
                 <swiper-slide class="swiper-slide" >
                     <a href="" class="swiper-slide__a" routerLink="movie/{{item.id}}">
                         <div class="slide">
                             <img class="img" [src]="item.poster">
                             <span class="card__span">{{item.name}}</span>
-                            <div class="card_rating" [ngClass]="getRatingClass(item.rating)">
+                            <div class="card_rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
                                 <div class="rating__span">{{item.rating | roundToNearest}}</div>
                             </div>
                         </div>

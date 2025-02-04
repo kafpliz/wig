@@ -1,7 +1,7 @@
 .container {
     width: 100%;
     min-height: 100px;
-    padding: 0 22px 0;
+    padding: 0 0 0;
 }
 
 .swiper {
@@ -18,7 +18,8 @@
     background: transparent;
     overflow: hidden;
     position: relative;
-    border-radius: 32px;
+    display: grid;
+    place-items: center;
     transform: scale(0.8);
     transition: all .3s linear;
 }
@@ -32,13 +33,14 @@
 
 
 .swiper-slide__div {
-    width: 100%;
+    width: 95%;
     height: 263px;
     display: flex;
     padding: 20px 15px;
     cursor: pointer;
     align-items: flex-end;
     position: relative;
+    border-radius: 32px;
 
     .swiper-slide_rating {
         width: 50px;
@@ -89,4 +91,10 @@
 
     }
 
+}
+
+@media screen and (max-width: 425px) {
+.swiper-slide__div{
+    width: 95%;
+}
 }

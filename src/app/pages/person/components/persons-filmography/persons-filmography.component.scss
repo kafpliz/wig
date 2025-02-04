@@ -23,28 +23,32 @@
 
 .tabs {
     width: 100%;
-    min-height: 40px;
+    height: 40px;
     display: flex;
     gap: 30px;
     justify-content: center;
 
     .tab {
-        flex: 1 1;
+    
         border-radius: 7px;
         background: #650b74;
         display: grid;
         place-items: center;
-
+        color: #919191;
         .tabs__span {
-            color: var(--header-text-color);
+
             font-family: Open Sans;
             font-weight: 600;
             font-size: 18px;
+        }
+        .tabs__span::first-letter{
+            text-transform: uppercase;
         }
     }
 
     .tab-active {
         background: #666666;
+        color:white;
     }
 }
 

@@ -32,7 +32,7 @@
         }
 
         .rating {
-            background: #8FD14F;
+           
             width: 50px;
             height: 30px;
             border-radius: 7px;
@@ -72,13 +72,17 @@
                 width: 30px;
                 height: 30px;
 
-                .panel_item_img_svg {
+                .copy__svg {
                     transform: rotate(45deg);
+                    fill: var(--color);
+                }
+                .favourite__svg{
+                    stroke: var(--color);
                 }
             }
 
             .panel_item__span {
-                color: white;
+                color: var(--color);
                 font-family: Open Sans;
                 font-weight: 700;
                 font-size: 13px;

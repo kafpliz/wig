@@ -1,7 +1,7 @@
 .wrapper {
     width: 100%;
     min-height: 100px;
-    padding: 0 0 0 10px;
+  
     display: flex;
     flex-direction: column;
     gap: 15px;
@@ -12,8 +12,7 @@
     align-items: center;
     justify-content: space-between;
     min-height: 50px;
-    padding: 0 22px 0 0;
-
+    padding: 0 22px 0 10px;
 }
 
 .header__span {
@@ -79,7 +78,7 @@
     font-weight: 500;
     line-height: 22px;
     letter-spacing: -0.40799999237060547px;
-    color: white;
+    color: var(--color);
     white-space: nowrap;
 }
 

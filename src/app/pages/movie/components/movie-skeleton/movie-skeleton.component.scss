@@ -1,0 +1,25 @@
+.wrapper{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.info{
+    width: 50%;
+}
+.descr{
+    width: 80%;
+}
+
+@media screen and (max-width:445px) {
+    .info{
+        width: 80%;
+    }
+    .descr{
+        width: 80%;
+    }
+    
+}

@@ -4,14 +4,14 @@
     </div>
     <div class="catalog">
         <swiper-container class="catalog-swiper" slides-per-view="auto" space-between="20" loop="true" centered-slides="true">
-            @for (item of items(); track $index) {
+            @for (item of items()?.data; track $index) {
                 <swiper-slide class="swiper-slide" >
                     <a href="" class="swiper-slide__a" routerLink="movie/{{item.id}}">
                         <div class="slide">
-                            <img class="img" [src]="item.poster">
+                            <img class="img" [src]="item.logo">
                             <span class="card__span">{{item.name}}</span>
-                            <div class="card_rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
-                                <div class="rating__span">{{item.rating | roundToNearest}}</div>
+                            <div class="card_rating" [ngStyle]="{background: checkRatingStyle(item.raiting.kp)}">
+                                <div class="rating__span">{{item.raiting.kp | roundToNearest}}</div>
                             </div>
                         </div>
                     </a>

@@ -1,3 +1,9 @@
 export interface IRandom {
-    id:number
+    data: {
+        film: {
+            id:{
+                kp:number
+            }
+        }
+    }
 }

@@ -1,7 +1,7 @@
 import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, input } from '@angular/core';
 import { RouterLink } from '@angular/router';
 import { CommonModule } from '@angular/common';
-import { IPopularMovie } from '../../../../data/interfaces/popular-movie.interface';
+import { IPopularMovie, } from '../../../../data/interfaces/popular-movie.interface';
 import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe';
 
 
@@ -14,10 +14,10 @@ import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class MSwiperComponent {
-  slides = input<IPopularMovie[]>()
-
+  slides = input<IPopularMovie>()
+ 
   ngOnInit() {
-
+   
 
   }
   checkRatingStyle(rating:number): string {

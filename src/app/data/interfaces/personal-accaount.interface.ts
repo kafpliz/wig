@@ -1,6 +1,6 @@
 export interface IPersonalAccount {
     id: string
-    endDate: number | boolean
+    endDate: number | null
     isSubscribe: boolean
     payUrl: string
     refUrl:string

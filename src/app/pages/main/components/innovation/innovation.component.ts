@@ -15,7 +15,7 @@ import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class InnovationComponent {
-  items = input<IInnovation[]>()
+  items = input<IInnovation>()
   swiperConfig = {
     breakpoints: {
       320: {

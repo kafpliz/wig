@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { ISearchCard } from '../../../../data/interfaces/search-card.interface';
+import { ISearch, ISearchCard } from '../../../../data/interfaces/search-card.interface';
 import { SearchCardTypePipe } from '../../../../core/pipes/search-card-type.pipe';
 import { CommonModule } from '@angular/common';
 import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe';

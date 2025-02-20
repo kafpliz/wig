@@ -1,6 +1,15 @@
 export interface IInnovation{
-    rating:number,
-    poster:string,
-    name:string,
-    id:number
+    error: false,
+
+   data: {
+    id: number
+    name: string
+    alternative_name: string
+    year: number
+    raiting: {
+        kp: number
+        imdb: number
+    },
+    logo: string
+   }[]
 }

@@ -11,7 +11,8 @@ export class MovieService extends BaseServiceService {
   #filmId: number = 0;
   getMovie(id: number) {
     this.#filmId = id
-    return this.http.get<IMovie>(EMovie.url + `/${id}` + `/${this.tg.getUserId() }`)
+    const params = new HttpParams().set('id', id).set('user', this.tg.getUserId() ).set('limitPersons', 32)
+    return this.http.get<IMovie>(EMovie.url, { params })
   }
 
   sendFilm(fl?: string) {
@@ -19,9 +20,16 @@ export class MovieService extends BaseServiceService {
     const params = new HttpParams().set('id', this.tg.getUserId()).set('film', this.#filmId)
     return this.http.get(EMovie.urlS, { params })
   }
-  addFavourite(id:number){
-    const params = new HttpParams().set('id', this.tg.getUserId()).set('film', id)
-    return this.http.get(EMovie.urlFavor, {params})
+  addFavourite(id: number) {
+
+    
+    return this.http.post(EMovie.urlFavor, {
+      user:this.tg.getUserId(),
+      film: id
+    })
+  }
+  delFavourite(id: number) {
+    return this.http.delete(EMovie.urlFavor + `${this.tg.getUserId()}/` + id)
   }
   close() {
     return this.tg.close()

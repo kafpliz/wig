@@ -1,45 +1,45 @@
-<div class="card">
-    <div class="card_poster">
-        <img [src]="card()?.poster" class="card_poster__img" alt="">
-        <div class="card_rating" [ngStyle]="{background: checkRatingStyle(card()!.rating)}">
-            <div class="rating__span">{{card()?.rating ?? 0 | roundToNearest}}</div>
+    <div class="card">
+        <div class="card_poster">
+            <img [src]="card()?.pictures?.poster?.big" class="card_poster__img" alt="">
+            <div class="card_rating" [ngStyle]="{background: checkRatingStyle(card()!.rating.kp)}">
+                <div class="rating__span">{{card()?.rating?.kp  | roundToNearest}}</div>
+            </div>
         </div>
+
+        <div class="card_info">
+            <div class="card_info_names">
+                @if (card(); as card) {
+
+                <span class="card_info_names__span" *ngIf="card.names.name">{{card.names.name}}</span>
+                <span class="card_info_names__span" *ngIf="card.names.alternative">{{card.names.alternative}}</span>
+
+                @if (!card.names.name && !card.names.alternative) {
+                <span class="card_info_names__span">Название отсуствует</span>
+                }
+                }
+
+
+            </div>
+            <div class="card_info_genres">
+                @if (card(); as card) {
+                @if (card.nominations) {
+                @for (item of card.nominations; track $index) {
+                <span class="genres_item item_list">{{item}}</span>
+                }
+                }
+                <span class="genres_item item_series">{{card.type| searchCardType}}</span>
+                @for (item of card.categories; track $index ;let idx = $index) {
+                @if(idx < 4){ <span class="genres_item">{{item.name}}</span>
+
+                    }
+                    }
+                    @if (card.age_rating.age) {
+                    <span class="genres_item item_age-rating">18+</span>
+                    }
+                    }
+
+
+            </div>
+        </div>
+
     </div>
-
-    <div class="card_info">
-        <div class="card_info_names">
-            @if (card(); as card) {
-
-            <span class="card_info_names__span" *ngIf="card.name">{{card.name}}</span>
-            <span class="card_info_names__span" *ngIf="card.alternativeName">{{card.alternativeName}}</span>
-
-            @if (!card?.name && !card.alternativeName) {
-            <span class="card_info_names__span">Название отсуствует</span>
-            }
-            }
-
-
-        </div>
-        <div class="card_info_genres">
-            @if (card(); as card) {
-            @if (card.lists) {
-            @for (item of card.lists; track $index) {
-            <span class="genres_item item_list">{{item}}</span>
-            }
-            }
-            <span class="genres_item item_series">{{card.type | searchCardType}}</span>
-            @for (item of card.genres; track $index ;let idx = $index) {
-            @if(idx < 4){ <span class="genres_item">{{item.name}}</span>
-
-                }
-                }
-                @if (card.ageRating) {
-                <span class="genres_item item_age-rating">18+</span>
-                }
-                }
-
-
-        </div>
-    </div>
-
-</div>

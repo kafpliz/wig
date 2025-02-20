@@ -1,8 +1,8 @@
 import { IRating } from "./movie.interface"
 
-export interface ITopMovie{
-    error: false,
-
+export interface IFavourite {
+    error:boolean
+    code:number
     data: {
         categories: { name: string }[]
         countries: { name: string }[]
@@ -13,9 +13,7 @@ export interface ITopMovie{
                     big: string
                     small: string
                 },
-                backdrop:{
-                    url:string
-                }
+                backdrop:string
             }
             age_rating: {
                 age:string
@@ -26,9 +24,9 @@ export interface ITopMovie{
                 short:string
             }
             id:{
-                film_id:number
-                imdb_id:string
-                kp_id:number
+                film:number
+                imdb:string
+                kp:number
             }
             movie_length:number
             names: {
@@ -45,8 +43,5 @@ export interface ITopMovie{
             year:number
             url:string
         }
-
-       }[]
-
-
+    }[]
 }

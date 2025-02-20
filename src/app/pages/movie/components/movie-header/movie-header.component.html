@@ -1,9 +1,9 @@
 <div class="header">
     <div class="name">
-        <span class="header_name__span header__span">{{header.name}}</span>
-        <span class="header_alt-name__span header__span">{{header.alternativeName}}, {{header.year}}</span>
+        <span class="header_name__span header__span">{{header.names.name}}</span>
+        <span class="header_alt-name__span header__span">{{header.names.alternative}}, {{header.year}}</span>
         <div class="rating" [ngStyle]="{background: checkRatingStyle()}">
-            <span class="rating__span">{{header.rating | roundToNearest}}</span>
+            <span class="rating__span">{{header.rating.kp| roundToNearest}}</span>
         </div>
     </div>
     <div class="panel">
@@ -18,7 +18,7 @@
             </div>
             <span class="panel_item__span">Избранное</span>
         </div>
-        <a class="panel_item panel_item-watch" [href]="[header.link]">
+        <a class="panel_item panel_item-watch" [href]="[header.url]">
             <span class="panel_item__span-watch">Смотреть</span>
         </a>
         <div class="panel_item" (click)="copy()">

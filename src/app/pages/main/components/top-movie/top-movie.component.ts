@@ -13,7 +13,7 @@ import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe
   schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class TopMovieComponent {
-  items= input<ITopMovie[]>()
+  items= input<ITopMovie>()
 
   ngOnInit() {
   

@@ -1,38 +1,78 @@
-import { IMovie } from "./movie.interface"
-import { ISearchCard } from "./search-card.interface"
+import { IMovie, IRating } from "./movie.interface"
+import { ISearch} from "./search-card.interface"
 
 export interface IPersons {
-    id: number
-    name: string
-    enName: string
-    photo: string
-    lifeTime: {
-        start: string
-        end: string | null
+ code:number
+ error:boolean
+ data: {
+    person: {
+        info: {
+            id: {
+                film:number
+                kp:string
+                photo:string
+            }
+            names: {
+                name:string
+                 en :string
+            }
+            date: {
+                age:number
+            }
+        }
+        films:{
+            categories: { name: string }[]
+            countries: { name: string }[]
+            film: {
+                nominations: string[]
+                pictures:{
+                    poster: {
+                        big: string
+                        small: string
+                    },
+                    backdrop:string
+                }
+                age_rating: {
+                    age:string
+                    mpaa:string
+                }
+                description:{
+                    long:string
+                    short:string
+                }
+                id:{
+                    film_id:number
+                    imdb_id:string
+                    kp_id:number
+                }
+                movie_length:number
+                names: {
+                    name:string
+                    en_name:string
+                    alternative:string
+                }
+                rating:IRating
+                top:{
+                    top10:number | null
+                    top250:number | null
+                }
+                type: string
+                year:number
+                profession:string
+            }
+        }[]
     }
-    age: number
-    genres: string[]
-    profession: string[]
-    bestMovie: IPersonsBestMovie[]
-    birthPlace:string[]
-    screenwriter:ISearchCard[]
-    producer:ISearchCard[]
-    actor:ISearchCard[]
-    composer:ISearchCard[]
-    artist:ISearchCard[]
-    director:ISearchCard[]
-    editor:ISearchCard[]
-    operator:ISearchCard[]
+ }
 }
 export interface IPersonsShort{
     id: number
     name: string
+    kp_id:string
     photo: string
     enName: string
     profession:string
 }
 export interface IPersonsBestMovie{
-   
         id: number
         name: string
         alternativeName: string

@@ -1,5 +1,5 @@
 import { Component, input } from '@angular/core';
-import { IMovieGenresNominations } from '../../../../data/interfaces/movie.interface';
+import { INominationsCategories } from '../../../../data/interfaces/movie.interface';
 
 @Component({
   selector: 'app-movie-genres-nominations',
@@ -9,9 +9,9 @@ import { IMovieGenresNominations } from '../../../../data/interfaces/movie.inter
   styleUrl: './movie-genres-nominations.component.scss'
 })
 export class MovieGenresNominationsComponent {
-  getData = input<IMovieGenresNominations>()
-  data!:IMovieGenresNominations
+  getData = input<INominationsCategories>()
+  data!:INominationsCategories
   ngOnInit(){
-    this.data = this.getData()!
+    this.data = this.getData()!  
   }
 }

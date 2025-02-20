@@ -1,10 +1,10 @@
-<div class="container">
+<div class="container" *ngIf="slides()?.data">
     <swiper-container class="swiper" pagination="true" slides-per-view="1"  pagination-dynamic-bullets="true" space-between="0" loop="true"  centered-slides="true">
-        @for (item of slides(); track $index) {
+        @for (item of slides()?.data; track $index) {
             <swiper-slide class="swiper-slide">
-            <div class="swiper-slide__div" [routerLink]="['movie', item.id]" style="background: url({{item.poster}}) no-repeat top 0 left 0 /cover;">
-                <div class="swiper-slide_rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
-                    <span class="swiper-slide_rating__span">{{item.rating | roundToNearest}}</span>
+            <div class="swiper-slide__div" [routerLink]="['movie', item.id]" style="background: url({{item.logo}}) no-repeat top 0 left 0 /cover;">
+                <div class="swiper-slide_rating" [ngStyle]="{background: checkRatingStyle(item.raiting.kp)}">
+                    <span class="swiper-slide_rating__span">{{item.raiting.kp| roundToNearest}}</span>
                 </div>
                 <span class="swiper-slide_name">{{item.name}}</span>
             

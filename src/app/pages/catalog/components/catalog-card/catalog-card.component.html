@@ -1,68 +1,46 @@
 <div class="card">
-    <div class="card_poster"> 
-        <img [src]="card()?.poster?.url" class="card_poster__img" alt="">
-        
-            <div class="card_rating" [ngClass]="getRatingClass(card()?.rating)">
-                <div class="rating__span">{{card()?.rating ?? 0 | roundToNearest}}</div>
-            </div>
-        
-          
-        
-        
+    <div class="card_poster">
+        <img [src]="card()?.film?.pictures?.poster?.big" class="card_poster__img" alt="">
+
+        <div class="card_rating" [ngClass]="getRatingClass(card()?.film?.rating)">
+            <div class="rating__span">{{card()?.film?.rating?.kp | roundToNearest}}</div>
+        </div>
+
+
+
+
     </div>
 
     <div class="card_info">
         <div class="card_info_names">
-            @if (card(); as card) {
-            @if (card?.name) {
-            <span class="card_info_names__span">{{card.name}}</span>
-            @if (card.type == 'movie' ) {
-            <span class="card_info_names__span">{{card?.alternativeName ? card.alternativeName + ', ' + card.year :
-                card.name + ', ' + card.year}}</span>
-            } @else if(card.type == 'series' && card.releaseYears != null){
-            <span class="card_info_names__span">{{card?.alternativeName ? card.alternativeName + ' ' + '(' +
-                card.releaseYears[0] + '-' + card.releaseYears[1] + ')' : card.name + ' ' + '(' + card.releaseYears[0]
-                +'-' + card.releaseYears[1] + ')'}}</span>
-            }
-            } @else if (card?.alternativeName) {
-            <span class="card_info_names__span">{{card.alternativeName}}</span>
-            @if (card.type == 'movie' && card.names) {
-            <span class="card_info_names__span">{{card.alternativeName + ', ' + card.year}}</span>
-            } @else if(card.type == 'series' && card.releaseYears != null ){
-            <span class="card_info_names__span">{{card.alternativeName + ' ' + '(' + card.releaseYears[0] + '-' +
-                card.releaseYears[1] + ')'}}</span>
-            }
-            } @else if (card.names != null ) {
-            <span class="card_info_names__span">{{card.names[0]}}</span>
-            @if (card.type == 'movie') {
-            <span class="card_info_names__span">{{card.names[0] + ', ' + card.year}}</span>
-            } @else if(card.releaseYears) {
-            <span class="card_info_names__span">{{card.names[0] + ' ' + '(' + card.releaseYears[0] + '-' +
-                card.releaseYears[1] + ')'}}</span>
-            }
+            @if (card()?.film?.names; as item) {
 
-            } @else {
+            <span class="card_info_names__span" *ngIf="item.name">{{item.name}}</span>
+            <span class="card_info_names__span" *ngIf="item.alternative">{{item.alternative}}</span>
+
+            @if (!item.name && !item.alternative) {
             <span class="card_info_names__span">Название отсуствует</span>
             }
             }
 
 
         </div>
+
         <div class="card_info_genres">
             @if (card(); as card) {
-            @if (card.lists) {
-            @for (item of card.lists; track $index) {
+            @if (card.film.nominations) {
+            @for (item of card.film.nominations; track $index) {
             <span class="genres_item item_list">{{item}}</span>
             }
             }
-            <span class="genres_item item_series">{{card.type | searchCardType}}</span>
-            @for (item of card.genres; track $index ;let idx = $index) {
+            <span class="genres_item item_series">{{card.film.type | searchCardType}}</span>
+            @for (item of card.categories; track $index ;let idx = $index) {
             @if(idx < 4){ <span class="genres_item">{{item.name}}</span>
 
                 }
                 }
-                @if (card.ageRating) {
-                <span class="genres_item item_age-rating">18+</span>
+                @if (card.film.age_rating) {
+                <span class="genres_item item_age-rating">{{card.film.age_rating.age}}+</span>
                 }
                 }
 

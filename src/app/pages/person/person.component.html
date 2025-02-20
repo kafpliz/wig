@@ -1,44 +1,29 @@
 <div class="wrapper">
+    @if(load){
+
+    <app-movie-skeleton />
+
+    } @else {
 
     <div class="header">
         <div class="photo">
-            <img [src]="person.photo" alt="" srcset="">
+            <img [src]="person.data.person.info.id.photo" alt="" srcset="">
         </div>
         <div class="info">
             <div class="item">
-                <h2 class="item__h2">{{person.name}}</h2>
-                <span class="item__span item__span-grey">{{person.enName}}</span>
+                <div class="item_div">
+                    <h2 class="item__h2">{{person.data.person.info.names.name}}</h2>
+
+                </div>
+                <span class="item__span item__span-grey">{{person.data.person.info.names.en}}</span>
+                <span class="item__span lifetime__span  lifetime_age">Возраст: {{person.data.person.info.date.age}}
+                    г.</span>
             </div>
 
-            <div class="item">
-                <div class="proffesions">
-                    @for (item of person.profession; track $index) {
-                    <div class="item_profession">
-                        <span class="item_profession__span">{{item}}</span>
-                    </div>
-                    }
-                </div>
-                <div class="life">
-                    <div class="lifetime">
-                        <span class="item__span lifetime__span">{{person.lifeTime.start}} 
-                             @if (person.lifeTime.end) {
-                            <span class="item__span lifetime__span">- {{person.lifeTime.end}}</span>
-                            }
-                        </span>
-                      
-                        <span class="item__span lifetime__span  lifetime_age">{{person.age}} лет</span>
-                    </div>
-                    <div class="birthPlace">
-                        <span class="item__span birthPlace__span">{{person.birthPlace.join(', ')}}</span>
-                    </div>
-                </div>
-            </div>
-            <div class="item">
-                <span class="item__span genre_head">Жанры:</span>
-                <span class="item__span item_genres">{{person.genres.join(', ')}}</span>
-            </div>
+
         </div>
     </div>
-    <app-persons-best-movie [data]="bestMovie"/>
-    <app-persons-filmography [getData]="person"/>
+    <!--     <app-persons-best-movie [data]="bestMovie"/> -->
+    <app-persons-filmography [getData]="person" />
+    }
 </div>

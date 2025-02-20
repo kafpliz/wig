@@ -9,7 +9,6 @@ import { RandomaizerComponent } from "./components/randomaizer/randomaizer.compo
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
 import { ThemeService } from '../../core/services/theme.service';
-import { BackButtonComponent } from "../back-button/back-button.component";
 import { MainService } from '../../core/services/main.service';
 import { IMain } from '../../data/interfaces/main.interface';
 import { ErrorComponent } from "../error/error.component";
@@ -24,7 +23,7 @@ import { ErrorComponent } from "../error/error.component";
 export class MainComponent {
   isRandomaizerActive: boolean = false;
   #service = inject(MainService)
-  mainData: IMain | null = null
+  mainData!: IMain 
 
   isApi: boolean = true
 
@@ -35,7 +34,11 @@ export class MainComponent {
     }, err => { if (err.status != 200) this.isApi = false })
 
     if (this.isApi) {
+      console.log('start');
+      
       this.#service.getMain().subscribe(data=> {
+        console.log(data);
+        
         this.mainData = data
       })
     }

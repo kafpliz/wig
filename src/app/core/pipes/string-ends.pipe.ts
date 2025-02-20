@@ -31,6 +31,8 @@ export class StringEndsPipe implements PipeTransform {
     }
     else if (value == "сценаристы") {
       return value.replace('ы', '')
+    } else if(value == 'актеры дубляжа'){
+      return 'дубляж'
     }
 
 

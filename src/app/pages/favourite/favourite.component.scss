@@ -29,6 +29,132 @@
     align-self: center;
 }
 
+.card {
+    width: 100%;
+    min-height: 123px;
+    display: flex;
+    gap: 10px;
+
+    .card_poster { 
+        height: 100%;
+        flex: 1 1;
+        overflow: hidden;
+        position: relative;
+
+        .card_poster__img {
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            width: 100%;
+            height: 100%;
+        }
+        .card_rating {
+            width: 50px;
+            height: 26px;
+            border-radius: 8px;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            display: grid;
+            place-items: center;
+        }
+
+        .card_rating-positive {
+            background: rgba(0, 177, 39, 1);
+        }
+
+        .card_rating-negative {
+            background: rgba(240, 106, 48, 1);
+        }
+
+        .rating__span {
+            font-family: Jost;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 22px;
+            letter-spacing: -0.40799999237060547px;
+            color: white;
+        }
+    }
+
+    .card_info {
+        flex: 2 1;
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+
+        .card_info_names {
+            width: 100%;
+            min-height: 28px;
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+
+            .card_info_names__span {
+                font-family: Rubik;
+                font-size: 16px;
+                font-weight: 400;
+                line-height: 18.96px;
+
+            }
+
+                .card_info_names__span:first-child {
+                    color: var( --header-text-color);
+                    font-family: Rubik;
+                    font-size: 22px;
+                    font-weight: 500;
+                    line-height: 26.07px;
+                }
+
+                .card_info_names__span:last-child {
+                    color: rgba(117, 117, 117, 1);
+                }
+                .card_info_names__span:only-child {
+                    color: var( --header-text-color);
+                  }
+
+        }
+
+        .card_info_genres {
+            width: 100%;
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+
+            .genres_item {
+                background: var(--genre-item-background);
+                border-radius: 50px;
+                width: fit-content;
+                display: grid;
+                place-items: center;
+                height: 26px;
+                padding: 0 11px;
+                font-family: Rubik;
+                font-size: 12px;
+                font-weight: 500;
+                line-height: 22px;
+                letter-spacing: -0.40799999237060547px;
+
+            }
+
+            .item_series {
+                background: var(--item-series-background);
+                color: white;
+            }
+
+            .item_list {
+                color: white;
+                background: rgba(0, 177, 39, 1);
+            }
+
+            .item_age-rating {
+                background: rgba(211, 9, 47, 1);
+                color: white;
+            }
+        }
+    }
+}
+
+
 
 @media screen and (max-width:375px) {
     .wrapper{

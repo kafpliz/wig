@@ -15,18 +15,23 @@ export let ratingProcent = (part: number): number[] => {
     return []
 }
 
-export function unixToDate(unixTime:number | boolean) {
+export function unixToDate(unixTime: number | boolean | null, sub: boolean) {
     console.log(unixTime, typeof unixTime);
-    
-    if(unixTime != false){
-        const unTime = Number(unixTime)
+    if (sub && unixTime) {
+        if (unixTime) {
+            const unTime = Number(unixTime)
 
-        const date = new Date(unTime * 1000);
-        let time = date.toLocaleDateString(); 
-        return {message: 'Активна до ' + time, isSub: true}
-    } else {
-        return {message: 'Неактивна', isSub:false}
+            const date = new Date(unTime * 1000);
+            let time = date.toLocaleDateString();
+            return { message: 'Активна до ' + time, isSub: true }
+        } else {
+            return { message: 'Неактивна', isSub: false }
+        }
     }
+    else {
+        return { message: 'Неактивна', isSub: false }
     }
- 
-    
+}
+
+
+

@@ -18,8 +18,11 @@ export class MovieHeaderComponent {
   data = input<IMovieHeader | null>(null)
   header!: IMovieHeader;
   #service = inject(MovieService)
+
   ngOnInit() {
       this.header = this.data()! 
+      console.log(this.header.isFav);
+      this.isFavourite = this.header.isFav
   }
 
   copy() {
@@ -29,14 +32,25 @@ export class MovieHeaderComponent {
   }
 
   addFavourites() {
-    this.#service.addFavourite(this.header.id).subscribe(data=> {
-      this.#dataShared.changeMessage('Добавлено')
-      this.isFavourite = true
-    })
+    if(this.isFavourite){
+     
+      
+      this.#service.delFavourite(this.header.id).subscribe(data=> {
+        console.log('удалено');
+        this.isFavourite= false
+      })
+    } else { console.log(this.header.id);
+      this.#service.addFavourite(this.header.id).subscribe(data=> {
+   
+        this.#dataShared.changeMessage('Добавлено')
+        this.isFavourite = true
+      })
+    }
+   
    
   }
 
   checkRatingStyle(): string {
-    return this.header.rating >= 8.5 ? 'linear-gradient(250deg, rgba(241,255,0,1) 0%, rgba(255,0,0,1) 0%, rgba(255,0,189,1) 100%)': this.header.rating >= 7 ? '#8FD14F' : this.header.rating <= 6 ? 'red' : '#FAC710'
+    return this.header.rating.kp >= 8.5 ? 'linear-gradient(250deg, rgba(241,255,0,1) 0%, rgba(255,0,0,1) 0%, rgba(255,0,189,1) 100%)': this.header.rating.kp >= 7 ? '#8FD14F' : this.header.rating.kp <= 6 ? 'red' : '#FAC710'
   }
 }

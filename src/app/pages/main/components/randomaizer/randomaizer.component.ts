@@ -46,7 +46,7 @@ export class RandomaizerComponent {
       this.#service.getRandom(this.genreActive || '').subscribe(data => {
         console.log('data', data);
         
-          this.#router.navigate(['/movie', data[0].id] )
+          this.#router.navigate(['/movie', data.data.film.id.kp] )
 
       })
     }, 2000);

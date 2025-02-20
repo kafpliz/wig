@@ -1,22 +1,23 @@
 <div class="wrapper">
   @if (isApi) {
 
-    <div class="genres">
-        @for (item of genres; track $index) {
-            <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}" routerLinkActive="genres_item-active">
-                <span class="genres_item__span" routerLinkActive="active">{{item.name}}</span>
-            </div>
-        }
-    
+  <div class="genres">
+    @for (item of genres; track $index) {
+    <div class="genres_item" routerLink="/catalog" [queryParams]="{genre: item.name}"
+      routerLinkActive="genres_item-active">
+      <span class="genres_item__span" routerLinkActive="active">{{item.name}}</span>
     </div>
-    <div class="cards">
-        @for (item of cards; track $index) {
-            <app-catalog-card [card]="item" [routerLink]="['/movie', item.id]"/>
-        }
-       
-    </div>
-   
+    }
+
+  </div>
+  <div class="cards">
+    @for (item of cards.data; track $index) {
+    <app-catalog-card [card]="item" [routerLink]="['/movie', item.film.id.kp_id]" />
+    }
+
+  </div>
+
   } @else {
-    <app-error />
+  <app-error />
   }
 </div>

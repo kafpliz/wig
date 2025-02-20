@@ -6,7 +6,7 @@ import { Pipe, PipeTransform } from '@angular/core';
 })
 export class RoundToNearestPipe implements PipeTransform {
 
-  transform(value: number) {
+  transform(value: any) {
     let num:number = Number(value) 
 
       

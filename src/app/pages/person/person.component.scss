@@ -37,7 +37,13 @@
         flex-direction: column;
         gap: 3px;
         align-items: flex-start;
-
+        .item_div{
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
         .item__h2 {
             color: var(--header-text-color);
             font-family: Open Sans;
@@ -106,22 +112,7 @@
                 display: flex;
                 gap: 15px;
                 flex-wrap: wrap;
-                .lifetime__span {
-                    font-weight: 400;
-                    position: relative;
-                    font-size: 14px;
-                }
-
-                .lifetime_age:last-child::before {
-                    content: "";
-                    width: 4px;
-                    height: 4px;
-                    background: white;
-                    border-radius: 50%;
-                    position: absolute;
-                    left: -10px;
-                    top: 50%;
-                }
+          
             }
 
             .birthPlace__span {
@@ -156,6 +147,13 @@
 
     }
 
+}
+
+.lifetime__span {
+    font-weight: 400;
+    position: relative;
+    font-size: 14px;
+    color: var(--header-text-color);
 }
 
 

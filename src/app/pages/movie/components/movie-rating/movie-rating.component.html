@@ -2,11 +2,11 @@
     <h2 class="ratings__h2">Рейтинги</h2> 
     <div class="ratings_block">
         <div class="item">
-            <h2 class="item__h2">9.5</h2>
+            <h2 class="item__h2">{{data()!  .kp | roundToNearest }}</h2>
             <span class="item__span">Рейтинг кинопоиска </span>
         </div>
         <div class="item">
-            <h2 class="item__h2">9.5</h2>
+            <h2 class="item__h2">{{data()!.imdb | roundToNearest }}</h2>
             <span class="item__span">Рейтинг IMDb </span>
         </div>
   <!--       <div class="item">

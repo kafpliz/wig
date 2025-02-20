@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { MovieService } from '../../core/services/movie.service';
 import { ActivatedRoute, RouterLink, } from '@angular/router';
-import { IMovie, IMovieGenresNominations, IMovieHeader } from '../../data/interfaces/movie.interface';
+import { IMovie,  IMovieHeader, INominationsCategories, IRating } from '../../data/interfaces/movie.interface';
 import { CommonModule } from '@angular/common';
 import { ratingProcent } from '../../shared/utils/utils';
 import { ThemeService } from '../../core/services/theme.service';
@@ -13,11 +13,12 @@ import { MoviePersonsComponent } from "./components/movie-persons/movie-persons.
 import { MovieRatingComponent } from "./components/movie-rating/movie-rating.component";
 import { MovieHeaderComponent } from "./components/movie-header/movie-header.component";
 import { MovieGenresNominationsComponent } from "./components/movie-genres-nominations/movie-genres-nominations.component";
+import { MovieSkeletonComponent } from './components/movie-skeleton/movie-skeleton.component';
 
 @Component({
   selector: 'app-movie',
   standalone: true,
-  imports: [CommonModule, ErrorComponent, MoviePersonsComponent, MovieRatingComponent, MovieHeaderComponent, MovieGenresNominationsComponent],
+  imports: [CommonModule, ErrorComponent, MoviePersonsComponent, MovieRatingComponent, MovieHeaderComponent, MovieGenresNominationsComponent, MovieSkeletonComponent],
   templateUrl: './movie.component.html',
   styleUrl: './movie.component.scss'
 })
@@ -28,30 +29,43 @@ export class MovieComponent {
   movie!: IMovie;
   ratingStars: number[] = []
   themeService = inject(ThemeService)
-  isApi: boolean = true
+  isApi: boolean = false
   header!: IMovieHeader
-  gen_nom!: IMovieGenresNominations
+  rating!:IRating
+  gen_nom!: INominationsCategories
+  poster!:string | null;
+  loaded = false
+
   ngOnInit() {
     this.#route.params.subscribe(param => {
       const movieID = param['id']
+
       this.#service.getMovie(movieID).subscribe(data => {
         this.movie = data;
-        if (this.movie?.rating) {
-          this.ratingStars = ratingProcent(this.movie.rating)
+
+        const film = data;
+        if (this.movie?.data.film.rating.kp) {
+          this.ratingStars = ratingProcent(this.movie.data.film.rating.kp)
 
         }
         this.header = {
-          id: this.movie.id,
-          name: this.movie.name,
-          alternativeName: this.movie.alternativeName,
-          year: this.movie.year,
-          link: this.movie.link,
-          rating: this.movie.rating,
+          id: this.movie.data.film.id.kp,
+          names: this.movie.data.film.names,
+          year: this.movie.data.film.year,
+          rating: this.movie.data.film.rating,
+          url: data.data.film.url,
+          isFav: data.data.film.favorite
         }
+        console.log(this.header);
+        
+        this.rating = data.data.film.rating
+        this.poster = data.data.film.pictures.poster.big
         this.gen_nom = {
-          genres: this.movie.genres,
-          lists: this.movie.lists,
+          categories: this.movie.data.categories,
+          nominations: this.movie.data.film.nominations,
         }
+        this.isApi = true
+        this.loaded = true
       }, error => {
         if (error) {
           this.isApi = false
@@ -62,7 +76,7 @@ export class MovieComponent {
   }
 
   send() {
-    this.#service.sendFilm(this.movie?.link).subscribe(data => {
+    this.#service.sendFilm(this.movie?.data.film.url).subscribe(data => {
       this.#service.close()
     })
   }

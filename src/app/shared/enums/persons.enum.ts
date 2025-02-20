@@ -1,3 +1,3 @@
 export enum EPersons{
-    url = '/assets/person.json'
+    url = 'https://bot.kino24wig.ru/api/films/person'
 }

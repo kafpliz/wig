@@ -4,29 +4,30 @@
         <img src="/assets/kp-logo.svg" class="wrapper_header__img">
     </div>
     <div class="wrapper_container">
-        <swiper-container class="swiper"  slides-per-view="1.2" loop="true" centered-slides="true">
-            @for (item of items(); track $index) {
-                <swiper-slide >
+        <swiper-container class="swiper" slides-per-view="1.1" loop="true" centered-slides="true">
+            @for (item of items()?.data; track $index) {
+            <swiper-slide>
                 <div class="block">
-                    <div class="rating" [ngStyle]="{background: checkRatingStyle(item.rating)}">
-                        <span class="rating__span">{{item.rating | roundToNearest}}</span>
+                    <div class="rating" [ngStyle]="{background: checkRatingStyle(item.film.rating.kp)}">
+                        <span class="rating__span">{{item.film.rating.kp | roundToNearest}}</span>
                     </div>
-                   <a href="" routerLink="movie/{{item.id}}" class="swiper-slide__a">
-                    <div class="slide" style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url({{item.poster}}) no-repeat left 0 top 0 /cover ;">
-                        <span class="slide_name">{{item.name}}</span>
-                        <div class="slide_info">
-                            <span class="slide_info__span">{{item.year}}</span>
-                            <span class="slide_info__span">{{item.genre}}</span>
-                            <span class="slide_info__span">{{item.time}}</span>
+                    <a href="" routerLink="movie/{{item.film.id.film_id}}" class="swiper-slide__a">
+                        <div class="slide"
+                            style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url({{item.film.pictures.backdrop.url}}) no-repeat left 0 top 0 /cover ;">
+                            <span class="slide_name">{{item.film.names.name}}</span>
+                            <div class="slide_info">
+                                <span class="slide_info__span">{{item.film.year}}</span>
+                                <span class="slide_info__span"> {{item.categories[0].name}}</span>
+                                <span class="slide_info__span">{{item.film.movie_length}} мин</span>
+                            </div>
                         </div>
-                    </div>
-                   </a>
-    
+                    </a>
+
                 </div>
-                </swiper-slide>
+            </swiper-slide>
             }
-         
-           
+
+
 
 
         </swiper-container>

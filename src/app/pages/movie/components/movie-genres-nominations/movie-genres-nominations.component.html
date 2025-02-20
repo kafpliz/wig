@@ -5,18 +5,19 @@
 
         </div>
         <div class="item_container">
-            @for (item of data.genres; track $index) {
+            @for (item of data.categories; track $index) {
             <span class="item_genre__span item__container__span">{{item.name}}</span>
             }
         </div>
     </div>
+    @if (data.nominations) {
     <div class="genres-nominations_item">
         <div class="item__header">
             <span class="item__header__span">Номинации</span>
 
         </div>
         <div class="item_container item_container_nominations">
-            @for (item of data.lists; track $index) {
+                @for (item of data.nominations; track $index) {
             <div class="nominations__div">
                 <span class="nominations__span">{{item}}</span>
             </div>
@@ -24,4 +25,5 @@
 
         </div>
     </div>
+    }
 </div>

@@ -30,7 +30,7 @@ export class PersonalAccountComponent {
     this.#service.getData().subscribe(data => {
       console.log(data);
       this.user = data;
-      this.endDate = unixToDate(data.endDate)
+      this.endDate = unixToDate(data.endDate, data.isSubscribe)
     }, error => {
       if (error) {
         this.#service.sendError(error)

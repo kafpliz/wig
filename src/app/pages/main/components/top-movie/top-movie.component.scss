@@ -31,7 +31,7 @@
 }
 
 .swiper {
-    min-height: 205px;
+    min-height: 100px;
 
     swiper-slide {
         width: 100%;
@@ -115,6 +115,9 @@
                 line-height: 22px;
                 letter-spacing: -0.40799999237060547px;
                 color: white;
+            }
+            .slide_info__span:nth-child(2)::first-letter{
+                text-transform: uppercase;
             }
         }
     }

@@ -1,10 +1,10 @@
 <div class="wrapper">
-    @if (isApi) {
+    @if (isApi && loaded) {
     <div class="poster"
-        style="background:  linear-gradient(0deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%),linear-gradient(180deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%), url({{movie.poster.url}}) no-repeat top 0 right 0 /cover;  ">
+        style="background:  linear-gradient(0deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%),linear-gradient(180deg, var(--movie-gradient) 0%, rgba(255,255,255,0) 100%), url({{poster}}) no-repeat top 0 right 0 /cover;  ">
         <div class="poster_img">
-            <img [src]="movie.poster.url" class="poster__img" alt="Poster">
-            <div class="rating" *ngIf="movie.rating">
+            <img [src]="poster" class="poster__img" alt="Poster">
+            <div class="rating" *ngIf="movie.data.film.rating.kp">
                 @for (item of ratingStars; track $index) {
                 <img src="/assets/stars.svg" alt="star" srcset="">
                 }
@@ -17,16 +17,18 @@
     <div class="container">
         <app-movie-header [data]="header"/>
         <div class="description">
-            <span class="description__span">{{movie.description}}</span>
+            <span class="description__span">{{movie.data.film.description.long ? movie.data.film.description.long: movie.data.film.description.short}}</span>
         </div>
-        <app-movie-rating />
-        <app-movie-persons [persons]="movie.persons"/>
+        <app-movie-rating [data]="rating" />
+        <app-movie-persons [persons]="movie.data.persons" *ngIf="movie.data.persons && movie.data.persons.length > 0"/>
         <app-movie-genres-nominations [getData]="gen_nom"/>
 
 
     </div>
 
     } @else {
-    <app-error />
+        @if (!loaded) { <app-movie-skeleton /> }
+        @if(!isApi) {  <app-error />}
+       
     }
 </div>

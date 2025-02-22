@@ -26,9 +26,9 @@ export interface ITopMovie{
                 short:string
             }
             id:{
-                film_id:number
+                film:number
                 imdb_id:string
-                kp_id:number
+                kp:number
             }
             movie_length:number
             names: {

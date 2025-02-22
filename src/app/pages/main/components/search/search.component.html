@@ -18,11 +18,11 @@
             @for (item of cards; track $index) {
                 @if (item.type == 'person') {
                 <a href="" class="card__a" routerLink="person/{{item.id.kp_id}}">
-                    <app-search-person [data]="item" />
+                    <app-search-person [data]="item" [routerLink]="['movie', item.id.kp]"/>
                 </a>
         
                 } @else {
-                <a href="" class="card__a" routerLink="movie/{{item.id.kp_id}}">
+                <a href="" class="card__a"  routerLink="movie/{{item.id.kp}}">
                     <app-seacrh-card [card]="item" />
                 </a>
                 }

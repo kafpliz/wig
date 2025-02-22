@@ -11,7 +11,7 @@
                     <div class="rating" [ngStyle]="{background: checkRatingStyle(item.film.rating.kp)}">
                         <span class="rating__span">{{item.film.rating.kp | roundToNearest}}</span>
                     </div>
-                    <a href="" routerLink="movie/{{item.film.id.film_id}}" class="swiper-slide__a">
+                    <a href="" routerLink="movie/{{item.film.id.kp}}" class="swiper-slide__a">
                         <div class="slide"
                             style="background: linear-gradient(to top, #0000006e, #3b3b3b3b, rgb(119 119 119 / 12%), rgba(185, 185, 185, 0), rgba(255, 255, 255, 0)), url({{item.film.pictures.backdrop.url}}) no-repeat left 0 top 0 /cover ;">
                             <span class="slide_name">{{item.film.names.name}}</span>

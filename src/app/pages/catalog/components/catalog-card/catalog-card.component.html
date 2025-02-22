@@ -2,7 +2,7 @@
     <div class="card_poster">
         <img [src]="card()?.film?.pictures?.poster?.big" class="card_poster__img" alt="">
 
-        <div class="card_rating" [ngClass]="getRatingClass(card()?.film?.rating)">
+        <div class="card_rating" [ngStyle]="{background: checkRatingStyle()}">
             <div class="rating__span">{{card()?.film?.rating?.kp | roundToNearest}}</div>
         </div>
 

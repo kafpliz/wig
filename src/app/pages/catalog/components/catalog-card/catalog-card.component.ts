@@ -14,14 +14,7 @@ import { RoundToNearestPipe } from '../../../../core/pipes/round-to-nearest.pipe
 export class CatalogCardComponent {
   public card = input<ISearchCard>()
 
-  getRatingClass(rating:any): string {
-    console.log(rating);
-    
-    let rat = Number(rating)
-    if(rat >= 7){
-      return 'card_rating-positive'
-    } else {
-      return 'card_rating-negative'
-    }
+  checkRatingStyle(): string {
+    return this.card()!.film.rating.kp >= 8.5 ? 'linear-gradient(250deg, rgba(241,255,0,1) 0%, rgba(255,0,0,1) 0%, rgba(255,0,189,1) 100%)': this.card()!.film.rating.kp >= 7 ? '#8FD14F' : this.card()!.film.rating.kp <= 6 ? 'red' : '#FAC710'
   }
 }

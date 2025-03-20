@@ -21,8 +21,6 @@ export class MovieService extends BaseServiceService {
     return this.http.get(EMovie.urlS, { params })
   }
   addFavourite(id: number) {
-
-    
     return this.http.post(EMovie.urlFavor, {
       user:this.tg.getUserId(),
       film: id

@@ -26,7 +26,7 @@ export class MovieHeaderComponent {
   }
 
   copy() {
-    navigator.clipboard.writeText(window.location.href).then(() => {
+    navigator.clipboard.writeText(`${window.location.href}/`+ this.#service.tg.getUserId()).then(() => {
       this.#dataShared.changeMessage('Скопировано')
     })
   }

@@ -50,12 +50,12 @@
 
 .catalog-swiper {
     height: 335px;
-    padding-left: 15px;
 }
 
 .swiper-slide {
     position: relative;
-    width: 203px;
+    width: 213px;
+    padding-left: 10px;
 }
 .swiper-slide__a{
     text-decoration: none;
@@ -89,7 +89,7 @@
     border-radius: 8px;
     position: absolute;
     top: 10px;
-    left: 10px;
+    left: 20px;
     display: grid;
     place-items: center;
 }
